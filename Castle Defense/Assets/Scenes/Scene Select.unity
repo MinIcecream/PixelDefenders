@@ -220,7 +220,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1692509180}
         m_TargetAssemblyTypeName: SceneCardManager, Assembly-CSharp
-        m_MethodName: SetCurrenLevelManagerVariables
+        m_MethodName: SetCurrentLevelManagerVariables
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -365,7 +365,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2006399926}
         m_TargetAssemblyTypeName: SceneCardManager, Assembly-CSharp
-        m_MethodName: SetCurrenLevelManagerVariables
+        m_MethodName: SetCurrentLevelManagerVariables
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

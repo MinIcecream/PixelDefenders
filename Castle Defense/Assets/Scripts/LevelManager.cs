@@ -14,7 +14,6 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
- 
         StartLevel(CurrentLevelManager.CurrentLevel());
     }
 
@@ -34,9 +33,19 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(delay);
             if(GameObject.FindGameObjectsWithTag("Ogre").Length == 0)
             {
-                if(CurrentLevelManager.CurrentLevel() == PlayerPrefs.GetInt("CompletedLevel"))
+                //if level is less than total levels in the schene, just update completed levels by +1.
+                //else, scene +1 and level resets.
+                if(CurrentLevelManager.CurrentScene() == PlayerPrefs.GetInt("CompletedScene"))
                 {
-                    PlayerPrefs.SetInt("CompletedLevel", CurrentLevelManager.CurrentLevel()+ 1);
+                    if(CurrentLevelManager.CurrentLevel() < CurrentLevelManager.LevelsInCurrentScene())
+                    {
+                        PlayerPrefs.SetInt("CompletedLevel", CurrentLevelManager.CurrentLevel()+ 1);
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("CompletedScene", CurrentLevelManager.CurrentScene()+ 1);
+                        PlayerPrefs.SetInt("CompletedLevel", 0);
+                    }
                 }
 
                 OpenVictoryScreen();

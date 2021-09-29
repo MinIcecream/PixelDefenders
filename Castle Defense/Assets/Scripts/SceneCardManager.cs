@@ -19,29 +19,23 @@ public class SceneCardManager : MonoBehaviour
         button.GetComponent<Image>().color = card.buttonColor;
         sceneNumberTmp.text = "Scene: " + card.sceneNumber;
 
-        //if current scen and level are more than total levels, current scen is +1.
-
-        if(PlayerPrefs.GetInt("CurrentScene", 1) == card.sceneNumber)
+        if (PlayerPrefs.GetInt("CompletedScene", 1) >= card.sceneNumber)
         {
-            if (PlayerPrefs.GetInt("CurrentLevel", 1) >= card.totalLevels)
-            {
-                PlayerPrefs.SetInt("CurrentScene", PlayerPrefs.GetInt("CurrentScene", 1) + 1);
-            }
-            else
-            {
-                card.completedLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
-            }
+            card.completedLevel = card.totalLevels;
         }
-        EditorUtility.SetDirty(card);
-        if (PlayerPrefs.GetInt("CurrentScene", 1) > card.sceneNumber)
+        else if(PlayerPrefs.GetInt("CompletedScene", 1) == card.sceneNumber - 1)
         {
-            card.completedLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+            card.completedLevel = PlayerPrefs.GetInt("CompletedLevel",1);
+        }
+        else
+        {
+            card.completedLevel = 0;
         }
 
         progressTextTmp.text = card.completedLevel + "/" + card.totalLevels;
     }
 
-    public void SetCurrenLevelManagerVariables()
+    public void SetCurrentLevelManagerVariables()
     {
         CurrentLevelManager.SetCurrentScene(card.sceneNumber);
         CurrentLevelManager.SetLevelsInCurrentScene(card.totalLevels);

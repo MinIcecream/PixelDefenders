@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainColor: {r: 1, g: 0, b: 0, a: 1}
   buttonColor: {r: 0.5566038, g: 0, b: 0, a: 1}
-  totalLevels: 5
-  completedLevel: 1
+  totalLevels: 20
+  completedLevel: 20
   sceneNumber: 1

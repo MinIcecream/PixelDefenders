@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class LevelSelectSelector : MonoBehaviour
+public class LevelSelectEnabler : MonoBehaviour
 {
     public GameObject button;
 
@@ -15,7 +15,11 @@ public class LevelSelectSelector : MonoBehaviour
 
         foreach (GameObject button in GameObject.FindGameObjectsWithTag("LevelButton"))
         {
-            if (button.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedLevel", 1))
+            if(PlayerPrefs.GetInt("CompletedScene", 1) >= CurrentLevelManager.CurrentScene())
+            {
+                button.GetComponent<Button>().interactable = true;
+            }
+            else if (button.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedLevel", 1))
             {
                 button.GetComponent<Button>().interactable = true;
             }
@@ -28,10 +32,10 @@ public class LevelSelectSelector : MonoBehaviour
 
     void SpawnButtons()
     {
+   
         for(int i = 1; i <= CurrentLevelManager.LevelsInCurrentScene(); i++)
         {
             var newButton = Instantiate(button, transform.position, Quaternion.identity);
- 
  
             newButton.transform.SetParent(this.gameObject.transform);
             newButton.GetComponent<ButtonID>().SetID(i);
