@@ -2572,6 +2572,7 @@ GameObject:
   - component: {fileID: 682246257}
   - component: {fileID: 682246258}
   - component: {fileID: 682246260}
+  - component: {fileID: 682246259}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2623,6 +2624,18 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &682246259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682246256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eb9b13034c94c0694d57946c200e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &682246260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4835,7 +4848,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 450}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5389,7 +5402,8 @@ GameObject:
   - component: {fileID: 1491164175}
   - component: {fileID: 1491164177}
   - component: {fileID: 1491164176}
-  m_Layer: 5
+  - component: {fileID: 1491164178}
+  m_Layer: 13
   m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5453,6 +5467,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491164174}
   m_CullTransparentMesh: 1
+--- !u!114 &1491164178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491164174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef36843797c5bcf43a801a609f01eb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drag: 0
+  cam: {fileID: 519420031}
 --- !u!1 &1545067826
 GameObject:
   m_ObjectHideFlags: 0
