@@ -13,6 +13,7 @@ TagManager:
   - LevelButton
   - Pointer
   - Canvas
+  - CharacterIcon
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Projectile
   - EnemyPushPrevention
   - Projectile Collider
-  - 
+  - CharacterIcon
   - 
   - 
   - 
