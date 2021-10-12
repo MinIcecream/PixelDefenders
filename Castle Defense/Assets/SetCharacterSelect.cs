@@ -9,12 +9,13 @@ public class SetCharacterSelect : MonoBehaviour
 
     void Awake()
     {
-        foreach(Sprite sprite in Resources.LoadAll("Units", typeof(Sprite)))
+        foreach (string name in UnitManager.PlayerUnits())
         {
             var newChar = Instantiate(characterImage, transform.position, Quaternion.identity);
 
             newChar.transform.SetParent(this.gameObject.transform);
-            newChar.GetComponent<Image>().overrideSprite = sprite;
+            newChar.GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("Units/"+name);
+            newChar.GetComponent<CharacterIcon>().icon = name;
         }
     }
 }
