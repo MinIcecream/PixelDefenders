@@ -7,8 +7,12 @@ public class CharacterIcon : MonoBehaviour
     public CharacterIconParent slots;
     public string icon;
 
+    void Awake()
+    {
+        slots = GameObject.FindWithTag("SlotManager").GetComponent<CharacterIconParent>();
+    }
     public void OnClick()
     {
-        slots.GetSmallestSlot().SetCharacter(icon);
+        slots.SetCharacterInSmallestSlot(icon);
     }
 }
