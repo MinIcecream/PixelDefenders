@@ -12,11 +12,6 @@ public class LevelManager : MonoBehaviour
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
 
-    void Awake()
-    {
-        StartLevel(CurrentLevelManager.CurrentLevel());
-    }
-
     IEnumerator PassiveIncome(float delay)
     {
         while (true)
@@ -47,7 +42,6 @@ public class LevelManager : MonoBehaviour
                         PlayerPrefs.SetInt("CompletedLevel", 0);
                     }
                 }
-
                 OpenVictoryScreen();
             }
         }     
@@ -65,8 +59,12 @@ public class LevelManager : MonoBehaviour
         }
         yield break;
     }
-  
-    void StartLevel(int level)
+    public void StartCurrentLevel()
+    {
+        LevelSetup(CurrentLevelManager.CurrentLevel());
+        CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
+    }
+    public void StartLevel(int level)
     {
         LevelSetup(level);
         CurrentLevelManager.SetCurrentLevel(level);

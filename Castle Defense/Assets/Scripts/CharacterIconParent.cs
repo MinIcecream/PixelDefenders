@@ -26,4 +26,8 @@ public class CharacterIconParent : MonoBehaviour
     {
         characters.Remove(charToRemove);
     }
+    public static List<string> Characters()
+    {
+        return characters;
+    }
 }
