@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public GameObject VictoryMenu, DefeatMenu, castle, pointer;
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
+    public GameObject unitSelectionScreen;
 
     IEnumerator PassiveIncome(float delay)
     {
@@ -43,6 +44,7 @@ public class LevelManager : MonoBehaviour
                     }
                 }
                 OpenVictoryScreen();
+                break;
             }
         }     
     }
@@ -64,32 +66,25 @@ public class LevelManager : MonoBehaviour
         LevelSetup(CurrentLevelManager.CurrentLevel());
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
     }
-    public void StartLevel(int level)
-    {
-        LevelSetup(level);
-        CurrentLevelManager.SetCurrentLevel(level);
-    }
 
-    public void NextLevel()
+    public void NextLevelScreen()
     {
-        LevelSetup(CurrentLevelManager.CurrentLevel() + 1);
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel() + 1);
+        unitSelectionScreen.SetActive(true);
+        ClearLevel();
     }
-
-    public void RepeatLevel()
+    public void RepeatLevelScreen()
     {
-        LevelSetup(CurrentLevelManager.CurrentLevel());
+        CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
+        unitSelectionScreen.SetActive(true);
+        ClearLevel();
     }
 
-    void LevelSetup(int levelNum)
+    public void ClearLevel()
     {
         Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
         Camera.main.orthographicSize = 6;
-
-        GameObject currentCastle = GameObject.FindWithTag("Castle");
-        Destroy(currentCastle);
-        Instantiate(castle, castlePos, Quaternion.identity);
-
+ 
         foreach (GameObject orc in GameObject.FindGameObjectsWithTag("Ogre"))
         {
             Destroy(orc);
@@ -103,6 +98,13 @@ public class LevelManager : MonoBehaviour
             pointers.Remove(pointer);
             Destroy(pointer);
         }
+    }
+
+    void LevelSetup(int levelNum)
+    {
+        GameObject currentCastle = GameObject.FindWithTag("Castle");
+        Destroy(currentCastle);
+        Instantiate(castle, castlePos, Quaternion.identity);
 
         gold.SetGold(startGold);
         StartCoroutine(PassiveIncome(0.5f));

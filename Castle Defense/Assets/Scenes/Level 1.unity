@@ -3218,7 +3218,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 75, y: 75}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &682246260
@@ -3651,7 +3651,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1857303400}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatLevel
+        m_MethodName: RepeatLevelScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6465,7 +6465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1857303400}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: NextLevel
+        m_MethodName: NextLevelScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7497,6 +7497,7 @@ MonoBehaviour:
   castlePos: {x: 0, y: -4.5, z: 0}
   cameraPos: {x: 0.56, y: -0.95, z: -10}
   pointers: []
+  unitSelectionScreen: {fileID: 1295656379}
 --- !u!4 &1857303401
 Transform:
   m_ObjectHideFlags: 0

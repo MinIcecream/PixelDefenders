@@ -14,7 +14,7 @@ public class SetCharacterSelect : MonoBehaviour
             var newChar = Instantiate(characterImage, transform.position, Quaternion.identity);
 
             newChar.transform.SetParent(this.gameObject.transform);
-            newChar.GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("Units/"+name);
+            newChar.GetComponent<Image>().sprite = Resources.Load<Sprite>("Units/"+name);
             newChar.GetComponent<CharacterIcon>().icon = name;
         }
     }

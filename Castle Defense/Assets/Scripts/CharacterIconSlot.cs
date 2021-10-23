@@ -7,12 +7,18 @@ public class CharacterIconSlot : MonoBehaviour
 {
     public string character;
     public GameObject button;
+    GameObject unitObject;
 
-    public void SetCharacter(string chosenChar)
+    public void SetCharacter(GameObject chosenChar)
     {
-        character = chosenChar;
+        character = chosenChar.GetComponent<CharacterIcon>().icon;
         GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("Units/" + character);
         button.SetActive(true);
+
+        //set alpha smaller
+        unitObject = chosenChar;
+        unitObject.GetComponent<CharacterIcon>().SetAlpha();
+ 
     }
     public void ResetSlot()
     {
@@ -20,5 +26,8 @@ public class CharacterIconSlot : MonoBehaviour
         character = "";
         GetComponent<Image>().overrideSprite = null;
         button.SetActive(false);
+
+        //reset alpha
+        unitObject.GetComponent<CharacterIcon>().ResetAlpha();
     }
 }
