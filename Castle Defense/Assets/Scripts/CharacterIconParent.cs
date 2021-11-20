@@ -30,4 +30,10 @@ public class CharacterIconParent : MonoBehaviour
     {
         return characters;
     }
+
+    //called by pause menu. Whenever go back reset slots
+    public void ResetSlots()
+    {
+        characters.Clear();
+    }
 }

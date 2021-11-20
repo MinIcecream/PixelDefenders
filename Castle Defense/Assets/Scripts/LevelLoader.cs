@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public static int currentLevel;
+    //public static int currentLevel;
 /*
     void Awake()
     {

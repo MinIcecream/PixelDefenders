@@ -15,6 +15,7 @@ TagManager:
   - Canvas
   - CharacterIcon
   - SlotManager
+  - DeathParticles
   layers:
   - Default
   - TransparentFX

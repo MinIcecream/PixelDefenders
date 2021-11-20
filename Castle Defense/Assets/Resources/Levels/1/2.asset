@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
-  m_Name: 1
+  m_Name: 2
   m_EditorClassIdentifier: 
   enemies:
-  - name: Orc Chieftan
-    transform: {x: -1.7539778, y: 7.583731}
   - name: Chomper
-    transform: {x: -3.1050568, y: 8.749369}
-  - name: Orc Chieftan
-    transform: {x: -0.32, y: 7.44}
+    transform: {x: -1.31, y: 6.15}
   - name: Chomper
-    transform: {x: 0.1799202, y: 8.696384}
+    transform: {x: 0.7902131, y: 6.228054}
   - name: Chomper
-    transform: {x: -1.01, y: 8.749369}
-  - name: Chomper
-    transform: {x: 1.0806394, y: 8.669893}
-  - name: Chomper
-    transform: {x: -2.2308288, y: 8.77586}
+    transform: {x: 0.06, y: 6.2}
+  - name: Orc Druid
+    transform: {x: -0.5785352, y: 6.899708}
+  - name: Orc Druid
+    transform: {x: 0.81588906, y: 6.948635}

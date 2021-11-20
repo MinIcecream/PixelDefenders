@@ -45,6 +45,8 @@ public class OgreManager : MonoBehaviour
     {
         if (health.GetHealth() <= 0)
         {
+
+            PopupManager.SpawnDeathParticles(gameObject);
             GameObject.FindWithTag("Player").GetComponent<CoinManager>().AddGold(ogre.cost);
             Destroy(gameObject);
         }

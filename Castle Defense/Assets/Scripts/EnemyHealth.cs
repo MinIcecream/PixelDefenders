@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public void DealDamage(int damage)
     {
         health -= damage;
+        StartCoroutine(DamageIndicator.SetDamageColor(this.gameObject));
     }
 
     public void GainHealth(int gain)

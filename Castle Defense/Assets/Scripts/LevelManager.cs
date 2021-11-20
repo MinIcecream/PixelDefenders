@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
     public GameObject unitSelectionScreen;
+    IEnumerator coroutine;
+    public GameObject parent;
 
     IEnumerator PassiveIncome(float delay)
     {
@@ -43,6 +45,7 @@ public class LevelManager : MonoBehaviour
                         PlayerPrefs.SetInt("CompletedLevel", 0);
                     }
                 }
+
                 OpenVictoryScreen();
                 break;
             }
@@ -80,48 +83,6 @@ public class LevelManager : MonoBehaviour
         ClearLevel();
     }
 
-    public void ClearLevel()
-    {
-        Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
-        Camera.main.orthographicSize = 6;
- 
-        foreach (GameObject orc in GameObject.FindGameObjectsWithTag("Ogre"))
-        {
-            Destroy(orc);
-        }
-        foreach (GameObject knight in GameObject.FindGameObjectsWithTag("Knight"))
-        {
-            Destroy(knight);
-        }
-        foreach (GameObject pointer in GameObject.FindGameObjectsWithTag("Pointer"))
-        {
-            pointers.Remove(pointer);
-            Destroy(pointer);
-        }
-    }
-
-    void LevelSetup(int levelNum)
-    {
-        GameObject currentCastle = GameObject.FindWithTag("Castle");
-        Destroy(currentCastle);
-        Instantiate(castle, castlePos, Quaternion.identity);
-
-        gold.SetGold(startGold);
-        StartCoroutine(PassiveIncome(0.5f));
-        StartCoroutine(CheckForWin(0.5f));
-
-        Level level = Resources.Load<Level>("Levels/" + levelNum.ToString());
-
-        foreach (Level.enemyPos enemy in level.ReturnEnemies())
-        {
-            var newEnemy = Instantiate(Resources.Load<GameObject>("Unit Prefabs/" + enemy.name) as GameObject, enemy.transform, Quaternion.identity);
-
-            var newPointer = Instantiate(pointer, newEnemy.transform.position, Quaternion.identity);
-            newPointer.GetComponent<EnemyPointer>().target = newEnemy;
-            pointers.Add(newPointer);
-        }
-    }
-    
     public void OpenVictoryScreen()
     {
         VictoryMenu.SetActive(true);
@@ -144,8 +105,61 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadMenu()
     {
+        parent.SetActive(true);
+        parent.GetComponent<CharacterIconParent>().ResetSlots();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Level Select");
+    }
+
+    public void ClearLevel()
+    {
+        StopCoroutine(coroutine);
+
+        Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
+        Camera.main.orthographicSize = 6;
+ 
+        foreach (GameObject orc in GameObject.FindGameObjectsWithTag("Ogre"))
+        {
+            Destroy(orc);
+        }
+        foreach (GameObject knight in GameObject.FindGameObjectsWithTag("Knight"))
+        {
+            Destroy(knight);
+        }
+        foreach (GameObject pointer in GameObject.FindGameObjectsWithTag("Pointer"))
+        {
+            pointers.Remove(pointer);
+            Destroy(pointer);
+        }
+        foreach (GameObject particle in GameObject.FindGameObjectsWithTag("DeathParticles"))
+        {
+            Destroy(particle);
+        }
+    }
+
+
+    //LEVEL SETUP
+    void LevelSetup(int levelNum)
+    {
+        GameObject currentCastle = GameObject.FindWithTag("Castle");
+        Destroy(currentCastle);
+        Instantiate(castle, castlePos, Quaternion.identity);
+
+        gold.SetGold(startGold);
+        StartCoroutine(PassiveIncome(0.5f));
+        coroutine = CheckForWin(0.5f);
+        StartCoroutine(coroutine);
+
+        Level level = Resources.Load<Level>("Levels/" + CurrentLevelManager.CurrentScene() + "/"+ levelNum.ToString());
+
+        foreach (Level.enemyPos enemy in level.ReturnEnemies())
+        {
+            var newEnemy = Instantiate(Resources.Load<GameObject>("Unit Prefabs/Enemy Units/" + enemy.name) as GameObject, enemy.transform, Quaternion.identity);
+
+            var newPointer = Instantiate(pointer, newEnemy.transform.position, Quaternion.identity);
+            newPointer.GetComponent<EnemyPointer>().target = newEnemy;
+            pointers.Add(newPointer);
+        }
     }
 
     void SpawnPointers()

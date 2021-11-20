@@ -22,12 +22,16 @@ public class CharacterIconSlot : MonoBehaviour
     }
     public void ResetSlot()
     {
-        CharacterIconParent.RemoveCharacterFromList(character);
-        character = "";
-        GetComponent<Image>().overrideSprite = null;
-        button.SetActive(false);
+        if (character!="")
+        {
+            CharacterIconParent.RemoveCharacterFromList(character);
+            character = "";
+            GetComponent<Image>().overrideSprite = null;
+            button.SetActive(false);
 
-        //reset alpha
-        unitObject.GetComponent<CharacterIcon>().ResetAlpha();
+            //reset alpha
+            unitObject.GetComponent<CharacterIcon>().ResetAlpha();
+        }
+ 
     }
 }

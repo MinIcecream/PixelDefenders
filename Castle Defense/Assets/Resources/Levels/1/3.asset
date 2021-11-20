@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  enemies:
+  - name: Chomper
+    transform: {x: -11.244657, y: 5.749919}
+  - name: Chomper
+    transform: {x: -11.366976, y: 4.477813}
+  - name: Chomper
+    transform: {x: -9.825769, y: 5.8477736}
+  - name: Orc Druid
+    transform: {x: -10.608604, y: 6.5082903}
+  - name: Orc Druid
+    transform: {x: -12.125346, y: 5.3340383}
+  - name: Chomper
+    transform: {x: 12.4168825, y: 5.542466}
+  - name: Chomper
+    transform: {x: 12.493576, y: 4.315373}
+  - name: Chomper
+    transform: {x: 10.883016, y: 5.6447244}
+  - name: Orc Druid
+    transform: {x: 13.465025, y: 4.8010974}
+  - name: Orc Druid
+    transform: {x: 11.649949, y: 6.437222}

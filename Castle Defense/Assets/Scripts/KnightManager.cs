@@ -39,6 +39,7 @@ public class KnightManager : MonoBehaviour
     {
         if(health.GetHealth() <= 0)
         {
+            PopupManager.SpawnDeathParticles(gameObject);
             Destroy(gameObject);
         }
 
@@ -53,6 +54,7 @@ public class KnightManager : MonoBehaviour
         {
             idle = true;
         }
+        
     }
 
     void FixedUpdate()
@@ -74,29 +76,4 @@ public class KnightManager : MonoBehaviour
             }
         }
     }
-
-  /*  public IEnumerator AttackDuration(float attackDuration, int damage)
-    {
-        yield return new WaitForSeconds(attackTime);
-
-        if (currentTarget)
-        {
-            if(knight.name == "Crossbower")
-            {
-                var newBolt = Instantiate(bolt, transform.position, Quaternion.identity);
-                newBolt.GetComponent<CrossbowBolt>().Propel(currentTarget, knight.damage);
-            }
-            else if(knight.name == "Calvalry")
-            {
-                Vector2 TargetPos = (currentTarget.transform.position - transform.position).normalized * 10;
-
-            }
-            else
-            {
-                currentTarget.GetComponent<EnemyHealth>().DealDamage(damage);
-            }
-        }
-        yield return new WaitForSeconds(attackDuration);
-        isAttacking = false;
-    }*/
 }
