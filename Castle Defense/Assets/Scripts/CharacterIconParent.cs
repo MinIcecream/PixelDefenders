@@ -7,16 +7,16 @@ public class CharacterIconParent : MonoBehaviour
     public List<GameObject> slots = new List<GameObject>();
     private static List<string> characters = new List<string>();
 
-    public void SetCharacterInSmallestSlot(string newChar)
+    public void SetCharacterInSmallestSlot(GameObject newChar)
     {
-        if (!characters.Contains(newChar))
+        if (!characters.Contains(newChar.GetComponent<CharacterIcon>().icon))
         {
             foreach (GameObject slot in slots)
             {
                 if (slot.GetComponent<CharacterIconSlot>().character == "")
                 {
                     slot.GetComponent<CharacterIconSlot>().SetCharacter(newChar);
-                    characters.Add(newChar);
+                    characters.Add(newChar.GetComponent<CharacterIcon>().icon);
                     break;
                 }
             }
@@ -29,5 +29,11 @@ public class CharacterIconParent : MonoBehaviour
     public static List<string> Characters()
     {
         return characters;
+    }
+
+    //called by pause menu. Whenever go back reset slots
+    public void ResetSlots()
+    {
+        characters.Clear();
     }
 }

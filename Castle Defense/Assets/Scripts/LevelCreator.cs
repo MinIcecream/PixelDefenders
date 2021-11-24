@@ -10,14 +10,15 @@ public class LevelCreator : MonoBehaviour
 {
     public Level level;
 
-#if Unity_Editor
+#if UNITY_EDITOR
     public void SaveLevel()
     {
+    Debug.Log("DJ");
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Ogre");
 
         if (level != null)
         {
-             EditorUtility.SetDirty(level);
+            EditorUtility.SetDirty(level);
             foreach (GameObject obj in objs)
             {
                 level.AddEnemy(obj.GetComponent<OgreManager>().ogre.name, obj.transform.position);

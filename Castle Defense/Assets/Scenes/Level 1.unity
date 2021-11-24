@@ -488,6 +488,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 682246260}
+        m_TargetAssemblyTypeName: SetCharacterSelect, Assembly-CSharp
+        m_MethodName: ResetCharSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 566096516}
         m_TargetAssemblyTypeName: PlayerInventory, Assembly-CSharp
         m_MethodName: SetCharacters
@@ -2982,8 +2994,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 773978089}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1857303400}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
@@ -3218,7 +3230,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 75, y: 75}
-  m_Spacing: {x: 20, y: 20}
+  m_Spacing: {x: 50, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &682246260
@@ -3651,7 +3663,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1857303400}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: RepeatLevel
+        m_MethodName: RepeatLevelScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6465,7 +6477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1857303400}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: NextLevel
+        m_MethodName: NextLevelScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7204,8 +7216,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.044403076, y: -0.13290405}
+  m_SizeDelta: {x: 4.9573, y: 4.7801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684651727
 MonoBehaviour:
@@ -7469,6 +7481,8 @@ GameObject:
   - component: {fileID: 1857303404}
   - component: {fileID: 1857303400}
   - component: {fileID: 1857303405}
+  - component: {fileID: 1857303406}
+  - component: {fileID: 1857303407}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: LevelManager
@@ -7497,6 +7511,8 @@ MonoBehaviour:
   castlePos: {x: 0, y: -4.5, z: 0}
   cameraPos: {x: 0.56, y: -0.95, z: -10}
   pointers: []
+  unitSelectionScreen: {fileID: 1295656379}
+  parent: {fileID: 1859352571}
 --- !u!4 &1857303401
 Transform:
   m_ObjectHideFlags: 0
@@ -7523,7 +7539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23be44469ced6146a5311ae0bd5910b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
+  level: {fileID: 11400000, guid: 7c1a19564aa7c884199d1e92a98f884c, type: 2}
 --- !u!114 &1857303403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7558,6 +7574,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb579bea0cbf0df409ee6ebe46557272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1857303406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857303399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18647c2486bbd694d8f71cf84af30fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1857303407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857303399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf3da590a2a41640b7f0f253ec9dac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1859352571

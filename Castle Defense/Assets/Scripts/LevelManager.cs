@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public GameObject VictoryMenu, DefeatMenu, castle, pointer;
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
+    public GameObject unitSelectionScreen;
+    IEnumerator coroutine;
+    public GameObject parent;
 
     IEnumerator PassiveIncome(float delay)
     {
@@ -42,7 +45,9 @@ public class LevelManager : MonoBehaviour
                         PlayerPrefs.SetInt("CompletedLevel", 0);
                     }
                 }
+
                 OpenVictoryScreen();
+                break;
             }
         }     
     }
@@ -64,62 +69,20 @@ public class LevelManager : MonoBehaviour
         LevelSetup(CurrentLevelManager.CurrentLevel());
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
     }
-    public void StartLevel(int level)
-    {
-        LevelSetup(level);
-        CurrentLevelManager.SetCurrentLevel(level);
-    }
 
-    public void NextLevel()
+    public void NextLevelScreen()
     {
-        LevelSetup(CurrentLevelManager.CurrentLevel() + 1);
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel() + 1);
+        unitSelectionScreen.SetActive(true);
+        ClearLevel();
     }
-
-    public void RepeatLevel()
+    public void RepeatLevelScreen()
     {
-        LevelSetup(CurrentLevelManager.CurrentLevel());
+        CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
+        unitSelectionScreen.SetActive(true);
+        ClearLevel();
     }
 
-    void LevelSetup(int levelNum)
-    {
-        Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
-        Camera.main.orthographicSize = 6;
-
-        GameObject currentCastle = GameObject.FindWithTag("Castle");
-        Destroy(currentCastle);
-        Instantiate(castle, castlePos, Quaternion.identity);
-
-        foreach (GameObject orc in GameObject.FindGameObjectsWithTag("Ogre"))
-        {
-            Destroy(orc);
-        }
-        foreach (GameObject knight in GameObject.FindGameObjectsWithTag("Knight"))
-        {
-            Destroy(knight);
-        }
-        foreach (GameObject pointer in GameObject.FindGameObjectsWithTag("Pointer"))
-        {
-            pointers.Remove(pointer);
-            Destroy(pointer);
-        }
-
-        gold.SetGold(startGold);
-        StartCoroutine(PassiveIncome(0.5f));
-        StartCoroutine(CheckForWin(0.5f));
-
-        Level level = Resources.Load<Level>("Levels/" + levelNum.ToString());
-
-        foreach (Level.enemyPos enemy in level.ReturnEnemies())
-        {
-            var newEnemy = Instantiate(Resources.Load<GameObject>("Unit Prefabs/" + enemy.name) as GameObject, enemy.transform, Quaternion.identity);
-
-            var newPointer = Instantiate(pointer, newEnemy.transform.position, Quaternion.identity);
-            newPointer.GetComponent<EnemyPointer>().target = newEnemy;
-            pointers.Add(newPointer);
-        }
-    }
-    
     public void OpenVictoryScreen()
     {
         VictoryMenu.SetActive(true);
@@ -142,8 +105,61 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadMenu()
     {
+        parent.SetActive(true);
+        parent.GetComponent<CharacterIconParent>().ResetSlots();
         Time.timeScale = 1f;
         SceneManager.LoadScene("Level Select");
+    }
+
+    public void ClearLevel()
+    {
+        StopCoroutine(coroutine);
+
+        Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
+        Camera.main.orthographicSize = 6;
+ 
+        foreach (GameObject orc in GameObject.FindGameObjectsWithTag("Ogre"))
+        {
+            Destroy(orc);
+        }
+        foreach (GameObject knight in GameObject.FindGameObjectsWithTag("Knight"))
+        {
+            Destroy(knight);
+        }
+        foreach (GameObject pointer in GameObject.FindGameObjectsWithTag("Pointer"))
+        {
+            pointers.Remove(pointer);
+            Destroy(pointer);
+        }
+        foreach (GameObject particle in GameObject.FindGameObjectsWithTag("DeathParticles"))
+        {
+            Destroy(particle);
+        }
+    }
+
+
+    //LEVEL SETUP
+    void LevelSetup(int levelNum)
+    {
+        GameObject currentCastle = GameObject.FindWithTag("Castle");
+        Destroy(currentCastle);
+        Instantiate(castle, castlePos, Quaternion.identity);
+
+        gold.SetGold(startGold);
+        StartCoroutine(PassiveIncome(0.5f));
+        coroutine = CheckForWin(0.5f);
+        StartCoroutine(coroutine);
+
+        Level level = Resources.Load<Level>("Levels/" + CurrentLevelManager.CurrentScene() + "/"+ levelNum.ToString());
+
+        foreach (Level.enemyPos enemy in level.ReturnEnemies())
+        {
+            var newEnemy = Instantiate(Resources.Load<GameObject>("Unit Prefabs/Enemy Units/" + enemy.name) as GameObject, enemy.transform, Quaternion.identity);
+
+            var newPointer = Instantiate(pointer, newEnemy.transform.position, Quaternion.identity);
+            newPointer.GetComponent<EnemyPointer>().target = newEnemy;
+            pointers.Add(newPointer);
+        }
     }
 
     void SpawnPointers()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private static GameObject[] chars = new GameObject[6];
+    private GameObject[] chars = new GameObject[6];
     public GameObject[] slots = new GameObject[6];
     public GameObject selectedChar;
 
@@ -21,7 +21,6 @@ public class PlayerInventory : MonoBehaviour
             {
                 slots[i].GetComponent<InventorySlot>().SetImage(chars[i].name);
             }
-            
         }
     }
 
@@ -36,14 +35,19 @@ public class PlayerInventory : MonoBehaviour
     public void SetCharacters()
     {
         int i = 0;
-        foreach(string name in CharacterIconParent.Characters())
+        for (int j =0; j<6; j++)
+        {
+           
+            chars[j] = null;
+            
+        }
+        foreach (string name in CharacterIconParent.Characters())
         {
             if (name != "")
             {
-                chars[i] = Resources.Load<GameObject>("Unit Prefabs/" + name);
+                chars[i] = Resources.Load<GameObject>("Unit Prefabs/Player Units/" + name);
                 slots[i].GetComponent<InventorySlot>().SetImage(chars[i].name);
             }
-            i++;
         }
     }
 }
