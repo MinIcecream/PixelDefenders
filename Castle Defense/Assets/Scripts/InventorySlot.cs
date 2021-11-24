@@ -8,15 +8,26 @@ public class InventorySlot : MonoBehaviour
     public PlayerInventory invenMan;
     [Range(1,6)]
     public int slotNum;
+    private string character;
 
-    public void SetImage(string character)
+    public void SetCharacter(string newCharacter)
     {
         image.SetActive(true);
-        image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Units/" + character);
+        image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Units/" + newCharacter);
+        character = newCharacter;
+    }
+    public void ResetSlot()
+    {
+        image.SetActive(false);
+        character = "";
     }
 
     public void Clicked()
     {
-        invenMan.SetActiveChar(slotNum);
+        if(character != "")
+        {
+            invenMan.SetActiveCharacter(character);
+        }
     }
+ 
 }

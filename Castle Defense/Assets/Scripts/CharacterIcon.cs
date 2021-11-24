@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CharacterIcon : MonoBehaviour
 {
-    public CharacterIconParent slots;
-    public string icon;
+    public PlayerInventory inventory;
+    public string iconName;
 
     void Awake()
     {
-        slots = GameObject.FindWithTag("SlotManager").GetComponent<CharacterIconParent>();
+        inventory = GameObject.FindWithTag("Inventory").GetComponent<PlayerInventory>();
     }
     public void OnClick()
     {
-        slots.SetCharacterInSmallestSlot(this.gameObject);
+        inventory.TryAddCharacter(iconName);
     }
 
     public void SetAlpha()

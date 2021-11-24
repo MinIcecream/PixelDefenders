@@ -25,9 +25,9 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if (inven.selectedChar)
+        if (inven.selectedChar!="")
         {
-            character = inven.selectedChar;
+            character = Resources.Load<GameObject>("Unit Prefabs/Player Units/" + inven.selectedChar);
         }
         else
         {

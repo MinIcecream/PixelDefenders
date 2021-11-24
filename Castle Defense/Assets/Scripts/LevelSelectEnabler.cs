@@ -42,7 +42,7 @@ public class LevelSelectEnabler : MonoBehaviour
             newButton.name = (i).ToString();
             newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i).ToString();
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => { MenuManager.LoadLevelScene(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); });
+            newButton.GetComponent<Button>().onClick.AddListener(() => { SceneChangeManager.LoadLevel(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); });
         }
     }
 }

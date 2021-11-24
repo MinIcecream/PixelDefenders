@@ -16,6 +16,8 @@ TagManager:
   - CharacterIcon
   - SlotManager
   - DeathParticles
+  - SceneChangeManager
+  - Inventory
   layers:
   - Default
   - TransparentFX
