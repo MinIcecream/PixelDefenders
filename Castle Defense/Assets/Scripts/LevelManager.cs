@@ -137,6 +137,7 @@ public class LevelManager : MonoBehaviour
     //LEVEL SETUP
     void LevelSetup(int levelNum)
     {
+        Time.timeScale = 1f;
         GameObject currentCastle = GameObject.FindWithTag("Castle");
         Destroy(currentCastle);
         Instantiate(castle, castlePos, Quaternion.identity);
