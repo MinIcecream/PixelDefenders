@@ -7,31 +7,28 @@ public class CharacterIconSlot : MonoBehaviour
 {
     public string character;
     public GameObject button;
-    GameObject unitObject;
+    public PlayerInventory invenMan;
 
-    public void SetCharacter(GameObject chosenChar)
+    void Awake()
     {
-        character = chosenChar.GetComponent<CharacterIcon>().icon;
-        GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("Units/" + character);
-        button.SetActive(true);
+        invenMan = GameObject.FindWithTag("Inventory").GetComponent<PlayerInventory>();
+    }
 
-        //set alpha smaller
-        unitObject = chosenChar;
-        unitObject.GetComponent<CharacterIcon>().SetAlpha();
- 
+    public void SetCharacter(string newCharacter)
+    {
+        character = newCharacter;
+        GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("Units/" + newCharacter);
+        button.SetActive(true);
     }
     public void ResetSlot()
     {
-        if (character!="")
-        {
-            CharacterIconParent.RemoveCharacterFromList(character);
-            character = "";
-            GetComponent<Image>().overrideSprite = null;
-            button.SetActive(false);
+        character = "";
+        GetComponent<Image>().overrideSprite = null;
+        button.SetActive(false);
+    }
 
-            //reset alpha
-            unitObject.GetComponent<CharacterIcon>().ResetAlpha();
-        }
- 
+    public void ResetSlotButtonOnClick()
+    {
+        invenMan.RemoveCharacter(character);
     }
 }

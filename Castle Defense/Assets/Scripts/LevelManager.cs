@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> pointers = new List<GameObject>();
     public GameObject unitSelectionScreen;
     IEnumerator coroutine;
-    public GameObject parent;
 
     IEnumerator PassiveIncome(float delay)
     {
@@ -103,12 +101,10 @@ public class LevelManager : MonoBehaviour
         DefeatMenu.SetActive(false);
         Time.timeScale = 1f;
     }
-    public void LoadMenu()
+    public void BackButton()
     {
-        parent.SetActive(true);
-        parent.GetComponent<CharacterIconParent>().ResetSlots();
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Level Select");
+        GameObject.FindWithTag("SceneChangeManager").GetComponent<SceneChangeManager>().LoadLevelSelect();
     }
 
     public void ClearLevel()

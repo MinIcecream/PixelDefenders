@@ -4,50 +4,69 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private GameObject[] chars = new GameObject[6];
+    public List<string>chars = new List<string>();
     public GameObject[] slots = new GameObject[6];
-    public GameObject selectedChar;
+    public GameObject[] iconSelectionSlots = new GameObject[6];
+    public string selectedChar;
 
     void Start()
     {
-        if(chars[0] != null)
+        UpdateAllSlots();
+    }
+
+    //tries to add character to lowest slot available
+    public void TryAddCharacter(string character)
+    {
+        for (int j = 0; j < 6; j++)
         {
-            selectedChar = chars[0];
-        }
-  
-        for (int i = 0; i <6; i++)
-        {
-            if (chars[i] != null)
+            if(chars[j] == character)
             {
-                slots[i].GetComponent<InventorySlot>().SetImage(chars[i].name);
+                return;
+            }
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            if(chars[i] == "")
+            {
+                chars[i] = character;
+                UpdateAllSlots();
+                return;
             }
         }
     }
 
-    public void SetActiveChar(int slotNum)
+    //finds character and removes it
+    public void RemoveCharacter(string character)
     {
-        if (chars[slotNum - 1] != null)
+        for (int i = 0; i < 6; i++)
         {
-            selectedChar = chars[slotNum - 1];
+            if (chars[i] == character)
+            {
+                chars[i]="";
+                UpdateAllSlots();
+                return;
+            }
         }
     }
 
-    public void SetCharacters()
+    //update icon selection bar and inventory bar
+    public void UpdateAllSlots()
     {
-        int i = 0;
-        for (int j =0; j<6; j++)
+        for (int i =0; i<6; i++)
         {
-           
-            chars[j] = null;
-            
-        }
-        foreach (string name in CharacterIconParent.Characters())
-        {
-            if (name != "")
+            slots[i].GetComponent<InventorySlot>().ResetSlot();
+            iconSelectionSlots[i].GetComponent<CharacterIconSlot>().ResetSlot();
+
+            if (chars[i] != "")
             {
-                chars[i] = Resources.Load<GameObject>("Unit Prefabs/Player Units/" + name);
-                slots[i].GetComponent<InventorySlot>().SetImage(chars[i].name);
+                slots[i].GetComponent<InventorySlot>().SetCharacter(chars[i]);
+                iconSelectionSlots[i].GetComponent<CharacterIconSlot>().SetCharacter(chars[i]);
             }
         }
+    }
+
+    public void SetActiveCharacter(string selectedCharacter)
+    {
+        selectedChar = selectedCharacter;
     }
 }
