@@ -25,6 +25,23 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log(CurrentLevelManager.CurrentLevel());
+        }
+        if (Input.GetKeyDown("a"))
+        {
+            Debug.Log(PlayerPrefs.GetInt("CompletedLevel", 1));
+        }
+        if (Input.GetKeyDown("s"))
+        {
+
+        }
+        if (Input.GetKeyDown("d"))
+        {
+  
+        }
+
         if (inven.selectedChar!="")
         {
             character = Resources.Load<GameObject>("Unit Prefabs/Player Units/" + inven.selectedChar);

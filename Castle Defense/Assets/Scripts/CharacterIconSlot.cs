@@ -29,6 +29,14 @@ public class CharacterIconSlot : MonoBehaviour
 
     public void ResetSlotButtonOnClick()
     {
+        foreach (GameObject unit in GameObject.FindGameObjectsWithTag("UnitIcon"))
+        {
+            if (unit.GetComponent<CharacterIcon>().iconName == character)
+            {
+                unit.GetComponent<CharacterIcon>().ResetAlpha();
+            }
+        }
+
         invenMan.RemoveCharacter(character);
     }
 }

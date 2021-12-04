@@ -25,7 +25,7 @@ public class SceneCardManager : MonoBehaviour
         }
         else if(PlayerPrefs.GetInt("CompletedScene", 1) == card.sceneNumber - 1)
         {
-            card.completedLevel = PlayerPrefs.GetInt("CompletedLevel",1);
+            card.completedLevel = PlayerPrefs.GetInt("CompletedLevel", 1);
         }
         else
         {

@@ -13,7 +13,7 @@ public class CharacterIcon : MonoBehaviour
     }
     public void OnClick()
     {
-        inventory.TryAddCharacter(iconName);
+        inventory.TryAddCharacter(iconName, this.gameObject);
     }
 
     public void SetAlpha()

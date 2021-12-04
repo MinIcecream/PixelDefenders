@@ -18,6 +18,7 @@ TagManager:
   - DeathParticles
   - SceneChangeManager
   - Inventory
+  - UnitIcon
   layers:
   - Default
   - TransparentFX
@@ -54,6 +55,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3913945187
+    locked: 0
+  - name: Ground object
+    uniqueID: 3710802437
     locked: 0
   - name: Default
     uniqueID: 0

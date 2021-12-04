@@ -27,15 +27,23 @@ public class LevelManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(delay);
+
+            //if you won:
             if(GameObject.FindGameObjectsWithTag("Ogre").Length == 0)
             {
+                yield return new WaitForSeconds(1.5f);
                 //if level is less than total levels in the schene, just update completed levels by +1.
                 //else, scene +1 and level resets.
-                if(CurrentLevelManager.CurrentScene() == PlayerPrefs.GetInt("CompletedScene"))
+
+                //if ur past the completed scene:
+                if(CurrentLevelManager.CurrentScene() > PlayerPrefs.GetInt("CompletedScene"))
                 {
                     if(CurrentLevelManager.CurrentLevel() < CurrentLevelManager.LevelsInCurrentScene())
                     {
-                        PlayerPrefs.SetInt("CompletedLevel", CurrentLevelManager.CurrentLevel()+ 1);
+                        if(CurrentLevelManager.CurrentLevel()>PlayerPrefs.GetInt("CompletedLevel", 1))
+                        {
+                            PlayerPrefs.SetInt("CompletedLevel", CurrentLevelManager.CurrentLevel());
+                        }
                     }
                     else
                     {

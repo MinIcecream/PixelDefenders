@@ -15,6 +15,9 @@ public class KnightAttack : MonoBehaviour
     public FaceOpponent faceEnemy;
     public GameObject spear;
 
+    //catapult
+    public GameObject boulder;
+
     void Awake()
     {
         type = knightManager.knight.name;
@@ -30,6 +33,19 @@ public class KnightAttack : MonoBehaviour
             if (knightManager.currentTarget)
             {
                 newBolt.GetComponent<CrossbowBolt>().Propel(knightManager.currentTarget, knightManager.knight.damage);
+            }
+
+            yield return new WaitForSeconds(attackDuration);
+            knightManager.isAttacking = false;
+        }
+        else if (type == "Catapult")
+        {
+            yield return new WaitForSeconds(knightManager.attackTime);
+
+            var newBoulder = Instantiate(boulder, transform.position, Quaternion.identity);
+            if (knightManager.currentTarget)
+            {
+                newBoulder.GetComponent<CatapultBoulder>().Propel(knightManager.currentTarget, knightManager.knight.damage);
             }
 
             yield return new WaitForSeconds(attackDuration);

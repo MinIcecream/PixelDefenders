@@ -11,11 +11,13 @@ public class PlayerInventory : MonoBehaviour
 
     void Start()
     {
+        /*PlayerPrefs.SetInt("CompletedLevel", 0);
+        PlayerPrefs.SetInt("CompletedScene", 0);*/
         UpdateAllSlots();
     }
 
     //tries to add character to lowest slot available
-    public void TryAddCharacter(string character)
+    public void TryAddCharacter(string character, GameObject slot)
     {
         for (int j = 0; j < 6; j++)
         {
@@ -28,6 +30,7 @@ public class PlayerInventory : MonoBehaviour
         {
             if(chars[i] == "")
             {
+                slot.GetComponent<CharacterIcon>().SetAlpha();
                 chars[i] = character;
                 UpdateAllSlots();
                 return;

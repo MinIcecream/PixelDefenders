@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     int health;
+    int max;
 
     public int GetHealth()
     {
@@ -18,11 +19,19 @@ public class EnemyHealth : MonoBehaviour
 
     public void GainHealth(int gain)
     {
-        health += gain;
+        if(health+gain >= max)
+        {
+            health = max;
+        }
+        else
+        {
+            health += max;
+        }
     }
 
-    public void SetMaxHealth(int max)
+    public void SetMaxHealth(int value)
     {
-        health = max;
+        health = value;
+        max = value;
     }
 }
