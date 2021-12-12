@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class KnightManager : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject currentTarget;
     public FieldOfView FOV;
     public Rigidbody2D rb;
+
+    [HideInInspector]
     public bool idle, isAttacking;
+
     Vector2 dir;
     public Animator anim;
     public EnemyHealth health;
 
     public Unit knight;
+    [HideInInspector]
     public float attackTime;
 
     public KnightAttack attackManager;
@@ -53,8 +58,7 @@ public class KnightManager : MonoBehaviour
         else
         {
             idle = true;
-        }
-        
+        }       
     }
 
     void FixedUpdate()

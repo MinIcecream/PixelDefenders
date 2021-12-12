@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         {
             health += max;
         }
+        Instantiate(Resources.Load("Spawnables/Healing Particle"), new Vector2(transform.position.x, transform.position.y + 0.3f), Quaternion.identity);
     }
 
     public void SetMaxHealth(int value)

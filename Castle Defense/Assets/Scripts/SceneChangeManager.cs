@@ -25,4 +25,8 @@ public class SceneChangeManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void ButtonClick()
+    {
+        AudioManager.Play("Click");
+    }
 }

@@ -5,11 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
-    float spawnTime = 0.1f;
-
-    bool canSpawn = true;
-
-    // bool spawn = true;
+    bool mouseDown = false;
 
     public CoinManager gold;
 
@@ -33,14 +29,6 @@ public class PlayerControl : MonoBehaviour
         {
             Debug.Log(PlayerPrefs.GetInt("CompletedLevel", 1));
         }
-        if (Input.GetKeyDown("s"))
-        {
-
-        }
-        if (Input.GetKeyDown("d"))
-        {
-  
-        }
 
         if (inven.selectedChar!="")
         {
@@ -53,20 +41,28 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (canSpawn && character)
+            if(mouseDown == false)
             {
-                SpawnCharacter(character);
-                canSpawn = false;
+                StartCoroutine(SpawnTimer());
+                mouseDown = true;
             }
         }
-        if (spawnTime <= 0)
+        if (Input.GetMouseButtonUp(0))
         {
-            canSpawn = true;
-            spawnTime = 0.1f;
+            mouseDown = false;
         }
-        else
+        IEnumerator SpawnTimer()
         {
-            spawnTime -= Time.deltaTime;
+            SpawnCharacter(character);
+
+            yield return new WaitForSeconds(0.25f);
+
+            while (mouseDown)
+            {
+                SpawnCharacter(character);
+                yield return new WaitForSeconds(0.1f);
+            }
+            yield break;
         }
  
         /*

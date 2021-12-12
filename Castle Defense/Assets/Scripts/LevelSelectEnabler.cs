@@ -7,10 +7,12 @@ using TMPro;
 public class LevelSelectEnabler : MonoBehaviour
 {
     public GameObject button;
+    public SceneChangeManager sceneMan;
 
     // Start is called before the first frame update
     void Start()
     {
+        sceneMan = GameObject.FindWithTag("SceneChangeManager").GetComponent<SceneChangeManager>();
         SpawnButtons();
 
         foreach (GameObject button in GameObject.FindGameObjectsWithTag("LevelButton"))
@@ -51,7 +53,8 @@ public class LevelSelectEnabler : MonoBehaviour
             newButton.name = (i).ToString();
             newButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = (i).ToString();
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => { SceneChangeManager.LoadLevel(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); });
+            newButton.GetComponent<Button>().onClick.AddListener(() => { SceneChangeManager.LoadLevel(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); sceneMan.ButtonClick(); });
+
         }
     }
 }

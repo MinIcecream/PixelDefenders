@@ -50,10 +50,6 @@ public class FieldOfView : MonoBehaviour
             {
                 Transform target = targetsInViewRadius[i].transform;
                 Vector3 dirToTarget = (target.position - transform.position).normalized;
-                //Debug.DrawLine(transform.position, transform.position + dirToTarget, Color.white, 1f);
-                // Debug.DrawLine(transform.position, transform.position + -transform.right, Color.red, 1f);
-
-                //Debug.Log(viewAngle/2);
 
                 if ((Vector2.Angle(-transform.right, dirToTarget)) < viewAngle / 2)
                 {
@@ -62,7 +58,12 @@ public class FieldOfView : MonoBehaviour
                     //targets
                     if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                     {
-                        visibleTargets.Add(target);
+                        if(target != this.gameObject)
+                        {
+
+                            visibleTargets.Add(target);
+
+                        }
                     }
                 }
             }

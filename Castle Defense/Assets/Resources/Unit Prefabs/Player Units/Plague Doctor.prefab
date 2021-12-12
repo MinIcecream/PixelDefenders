@@ -139,7 +139,7 @@ MonoBehaviour:
   viewDirection: 360
   targetMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -189,6 +189,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   faceEnemy: {fileID: 0}
   spear: {fileID: 0}
+  boulder: {fileID: 0}
+  healPool: {fileID: 2243883252258084219, guid: 5b3eadf101abe294aaca1846f2bf6cb6, type: 3}
 --- !u!1 &6147233447944773912
 GameObject:
   m_ObjectHideFlags: 0

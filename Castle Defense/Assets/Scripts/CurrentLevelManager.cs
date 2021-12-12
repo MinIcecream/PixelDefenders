@@ -6,6 +6,20 @@ public class CurrentLevelManager : MonoBehaviour
 {
     private static int currentLevel, currentScene, levelsInCurrentScene;
 
+    public static CurrentLevelManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
     public static int CurrentLevel()
     {
         return currentLevel;

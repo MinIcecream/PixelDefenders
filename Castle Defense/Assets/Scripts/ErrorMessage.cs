@@ -6,13 +6,13 @@ using TMPro;
 public class ErrorMessage : MonoBehaviour
 {
     public TextMeshProUGUI tmp;
-
+    public float dissapearRate;
 
     void FixedUpdate()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + 1);
         Color newColor = tmp.faceColor;
-        newColor.a -=0.008f;
+        newColor.a -=dissapearRate;
         tmp.faceColor = newColor;
         if(newColor.a <= 0)
         {

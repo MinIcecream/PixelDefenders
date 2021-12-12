@@ -15,6 +15,6 @@ MonoBehaviour:
   cost: 25
   health: 80
   damage: 10
-  range: 1
+  range: 2
   movement: 1
   attackDuration: 2

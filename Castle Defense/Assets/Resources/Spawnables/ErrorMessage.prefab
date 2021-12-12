@@ -70,7 +70,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d6ad4faf306fd7d438a88d76212fb032, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 4601595325011901246, guid: d6ad4faf306fd7d438a88d76212fb032, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp: {fileID: 5466154685880997938}
+  dissapearRate: 0.008
