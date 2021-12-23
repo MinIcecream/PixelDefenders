@@ -58,7 +58,7 @@ public class FieldOfView : MonoBehaviour
                     //targets
                     if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                     {
-                        if(target != this.gameObject)
+                        if(target != this.gameObject.transform)
                         {
 
                             visibleTargets.Add(target);

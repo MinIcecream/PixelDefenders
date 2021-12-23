@@ -26,6 +26,18 @@ TextureImporter:
   - first:
       213: -4934612717824823811
     second: Button-export_7
+  - first:
+      213: 7435164644183736822
+    second: Button-export_8
+  - first:
+      213: -7855560050851887071
+    second: Button-export_9
+  - first:
+      213: 639204794628513861
+    second: Button-export_10
+  - first:
+      213: -4980387242303203966
+    second: Button-export_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +82,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -135,6 +147,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -142,8 +166,8 @@ TextureImporter:
       name: Button-export_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 126
+        x: 4
+        y: 132
         width: 59
         height: 25
       alignment: 0
@@ -226,10 +250,10 @@ TextureImporter:
       name: Button-export_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 52
-        width: 25
-        height: 25
+        x: 64
+        y: 94
+        width: 30
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,7 +271,7 @@ TextureImporter:
       name: Button-export_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 4
         y: 52
         width: 25
         height: 25
@@ -268,10 +292,10 @@ TextureImporter:
       name: Button-export_6
       rect:
         serializedVersion: 2
-        x: 100
-        y: 55
-        width: 7
-        height: 7
+        x: 48
+        y: 52
+        width: 25
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +313,10 @@ TextureImporter:
       name: Button-export_7
       rect:
         serializedVersion: 2
-        x: 18
-        y: 23
-        width: 30
-        height: 14
+        x: 100
+        y: 55
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,6 +326,90 @@ TextureImporter:
       bones: []
       spriteID: dfd2de9b0ebb48bb0800000000000000
       internalID: -4934612717824823811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button-export_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 58
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f18d17c9d20f2760800000000000000
+      internalID: 7435164644183736822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button-export_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 180
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128493911c17bf290800000000000000
+      internalID: -7855560050851887071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button-export_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5402f82cf59eed800800000000000000
+      internalID: 639204794628513861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button-export_11
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28551aab03c12eab0800000000000000
+      internalID: -4980387242303203966
       vertices: []
       indices: 
       edges: []

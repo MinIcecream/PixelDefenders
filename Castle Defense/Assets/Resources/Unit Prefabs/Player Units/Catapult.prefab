@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5060404376255659195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4160410132051604526}
+  m_Layer: 0
+  m_Name: BoulderSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4160410132051604526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060404376255659195}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.558, y: 0.009, z: -0.17723697}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6147233447184416433}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6147233447184416443
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,10 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6147233447184416433}
   - component: {fileID: 6147233447184416438}
-  - component: {fileID: 6147233447184416439}
   - component: {fileID: 6147233447184416436}
   - component: {fileID: 6147233447184416437}
   - component: {fileID: 6147233447184416442}
+  - component: {fileID: 6147233447184416439}
   - component: {fileID: 6147233447184416432}
   - component: {fileID: 2080788943505212385}
   - component: {fileID: 9154950935144979646}
@@ -38,6 +68,7 @@ Transform:
   - {fileID: 6147233447944773915}
   - {fileID: 1777992473577446459}
   - {fileID: 3218957985284302048}
+  - {fileID: 4160410132051604526}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63,27 +94,6 @@ MonoBehaviour:
   knight: {fileID: 11400000, guid: b6947944da12bdd40a6d8e986b648edf, type: 2}
   attackTime: 0
   attackManager: {fileID: 9154950935144979646}
---- !u!50 &6147233447184416439
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6147233447184416443}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 2
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &6147233447184416436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +155,27 @@ MonoBehaviour:
     m_Bits: 0
   visibleTargets: []
   newTarget: {fileID: 0}
+--- !u!50 &6147233447184416439
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6147233447184416443}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 2
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &6147233447184416432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +221,8 @@ MonoBehaviour:
   faceEnemy: {fileID: 0}
   spear: {fileID: 0}
   boulder: {fileID: 4523315749652261251, guid: ef3dbf4369d9e7f47be8b58d74c086d8, type: 3}
+  spawnPt: {fileID: 4160410132051604526}
+  healPool: {fileID: 0}
 --- !u!1 &6147233447944773912
 GameObject:
   m_ObjectHideFlags: 0

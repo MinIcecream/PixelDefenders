@@ -44,6 +44,7 @@ public class KnightManager : MonoBehaviour
     {
         if(health.GetHealth() <= 0)
         {
+            AudioManager.Play("Pop");
             PopupManager.SpawnDeathParticles(gameObject);
             Destroy(gameObject);
         }
