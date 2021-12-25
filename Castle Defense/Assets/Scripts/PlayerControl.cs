@@ -96,6 +96,7 @@ public class PlayerControl : MonoBehaviour
             int cost = character.GetComponent<KnightManager>().knight.cost;
             if (gold.CheckGold() >= cost)
             {
+                AudioManager.Play("Spawn");
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(character, mousePos, Quaternion.identity);
                 gold.UseGold(cost);

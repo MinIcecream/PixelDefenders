@@ -17,6 +17,7 @@ public class KnightAttack : MonoBehaviour
 
     //catapult
     public GameObject boulder;
+    public Transform spawnPt;
 
     //doctor
     public GameObject healPool;
@@ -46,8 +47,16 @@ public class KnightAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(knightManager.attackTime);
 
-            var newPool = Instantiate(healPool, knightManager.currentTarget.transform.position, Quaternion.identity);
-            newPool.GetComponent<PlagueDoctorHealPool>().SetDamageAndHeal(knightManager.knight.damage);
+            if(knightManager.currentTarget == null)
+            {
+                var newPool = Instantiate(healPool, this.gameObject.transform.position, Quaternion.identity);
+                newPool.GetComponent<PlagueDoctorHealPool>().SetDamageAndHeal(knightManager.knight.damage);
+            }
+            else
+            {
+                var newPool = Instantiate(healPool, knightManager.currentTarget.transform.position, Quaternion.identity);
+                newPool.GetComponent<PlagueDoctorHealPool>().SetDamageAndHeal(knightManager.knight.damage);
+            }
             yield return new WaitForSeconds(attackDuration);
             knightManager.isAttacking = false;
         }
@@ -56,7 +65,7 @@ public class KnightAttack : MonoBehaviour
         {
             yield return new WaitForSeconds(knightManager.attackTime);
 
-            var newBoulder = Instantiate(boulder, transform.position, Quaternion.identity);
+            var newBoulder = Instantiate(boulder, spawnPt.position, Quaternion.identity);
             if (knightManager.currentTarget)
             {
                 newBoulder.GetComponent<CatapultBoulder>().Propel(knightManager.currentTarget, knightManager.knight.damage);

@@ -68,6 +68,7 @@ public class LevelManager : MonoBehaviour
             Camera.main.orthographicSize -= Time.deltaTime * 1.5f;
             yield return null;
         }
+        AudioManager.Play("Crash");
         yield break;
     }
     public void StartCurrentLevel()

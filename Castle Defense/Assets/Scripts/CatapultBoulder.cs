@@ -7,7 +7,8 @@ public class CatapultBoulder : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject enemy;
     int damage;
-   
+    public CatapultBoulderAOECollider targets;
+
     public void Propel(GameObject target, int setDamage)
     {
         Vector2 startPos = transform.position;
@@ -23,14 +24,17 @@ public class CatapultBoulder : MonoBehaviour
     {
         if (coll.gameObject.tag != "Castle")
         {
+             
             if (coll.gameObject.transform.parent.gameObject == enemy)
             {
+                foreach (GameObject enemy in targets.enemies)
+                {
+                    enemy.GetComponent<EnemyHealth>().DealDamage(damage);
+                }
                 rb.velocity = Vector3.zero;
                 rb.gravityScale = 0f;
                 rb.GetComponent<SpriteRenderer>().enabled = false;
-                rb.GetComponent<BoxCollider2D>().enabled = false;
-            //    particles.GetComponent<ParticleSystem>().Play();
-                enemy.GetComponent<EnemyHealth>().DealDamage(damage);
+                rb.GetComponent<CircleCollider2D>().enabled = false;
                 Invoke("Destroy", 1f);
             }
         }
