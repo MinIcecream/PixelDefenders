@@ -40,6 +40,7 @@ public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         }
     }
 
+    #if UNITY_EDITOR
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
@@ -76,4 +77,5 @@ public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         
     }
+    #endif
 }

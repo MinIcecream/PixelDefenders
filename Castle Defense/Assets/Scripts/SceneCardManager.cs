@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class SceneCardManager : MonoBehaviour
 {
@@ -33,6 +30,10 @@ public class SceneCardManager : MonoBehaviour
         }
 
         progressTextTmp.text = card.completedLevel + "/" + card.totalLevels;
+
+        SceneChangeManager man = GameObject.FindWithTag("SceneChangeManager").GetComponent<SceneChangeManager>();
+
+        button.GetComponent<Button>().onClick.AddListener(() => { man.LoadLevelSelect(); man.ButtonClick(); });
     }
 
     public void SetCurrentLevelManagerVariables()
@@ -40,20 +41,5 @@ public class SceneCardManager : MonoBehaviour
         CurrentLevelManager.SetCurrentScene(card.sceneNumber);
         CurrentLevelManager.SetLevelsInCurrentScene(card.totalLevels);
     }
-#if Unity_Editor
-    public void SaveLevel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Ogre");
-
-        if (level != null)
-        {
-            EditorUtility.SetDirty(level);
-            foreach (GameObject obj in objs)
-            {
-                level.AddEnemy(obj.GetComponent<OgreManager>().ogre.name, obj.transform.position);
-            }
-        }
-    }
-#endif
 }
 
