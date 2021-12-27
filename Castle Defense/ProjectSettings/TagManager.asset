@@ -19,6 +19,7 @@ TagManager:
   - SceneChangeManager
   - Inventory
   - UnitIcon
+  - LockPoint
   layers:
   - Default
   - TransparentFX

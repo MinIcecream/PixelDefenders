@@ -18,18 +18,11 @@ public class PlayerControl : MonoBehaviour
 
     public LevelLoader loader;
     public Level level1;
+    bool onUI = false;
+    bool canSpawn = true;
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            Debug.Log(CurrentLevelManager.CurrentLevel());
-        }
-        if (Input.GetKeyDown("a"))
-        {
-            Debug.Log(PlayerPrefs.GetInt("CompletedLevel", 1));
-        }
-
         if (inven.selectedChar!="")
         {
             character = Resources.Load<GameObject>("Unit Prefabs/Player Units/" + inven.selectedChar);
@@ -39,32 +32,25 @@ public class PlayerControl : MonoBehaviour
             character = null;
         }
 
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.currentSelectedGameObject != null)
         {
-            if(mouseDown == false)
+            onUI = true;
+            StartCoroutine(LagOnUI());
+        }
+
+        if (Input.GetMouseButton(0) &&canSpawn&&!onUI)
+        {
+            if (mouseDown == false)
             {
                 StartCoroutine(SpawnTimer());
                 mouseDown = true;
-            }
+            }   
         }
         if (Input.GetMouseButtonUp(0))
         {
             mouseDown = false;
         }
-        IEnumerator SpawnTimer()
-        {
-            SpawnCharacter(character);
 
-            yield return new WaitForSeconds(0.25f);
-
-            while (mouseDown)
-            {
-                SpawnCharacter(character);
-                yield return new WaitForSeconds(0.1f);
-            }
-            yield break;
-        }
- 
         /*
         else
         {
@@ -103,6 +89,35 @@ public class PlayerControl : MonoBehaviour
             }
         }
         
+    }
+    IEnumerator LagOnUI()
+    {
+        yield return new WaitForSeconds(0.1f);
+        onUI = false;
+        yield break;
+    }
+
+    IEnumerator SpawnTimer()
+    {
+        SpawnCharacter(character);
+
+        yield return new WaitForSeconds(0.25f);
+
+        while (mouseDown)
+        {
+            SpawnCharacter(character);
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield break;
+    }
+
+    public void DisableSpawn()
+    {
+        canSpawn = false;
+    }
+    public void EnableSpawn()
+    {
+        canSpawn = true;
     }
     #region selection
     void UpdateSelectionBox (Vector2 currentMousePos)

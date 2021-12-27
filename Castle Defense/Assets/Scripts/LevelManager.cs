@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> pointers = new List<GameObject>();
     public GameObject unitSelectionScreen;
     IEnumerator coroutine;
+    public PlayerControl player;
 
     IEnumerator PassiveIncome(float delay)
     {
@@ -60,6 +61,8 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LoadLoseScreen()
     {
+        player.DisableSpawn();
+
         Camera.main.transform.position = new Vector3(castlePos.x, castlePos.y, cameraPos.z);
         Invoke("OpenDefeatScreen", 4.5f);
 
@@ -83,8 +86,11 @@ public class LevelManager : MonoBehaviour
         unitSelectionScreen.SetActive(true);
         ClearLevel();
     }
+
+    //Defeat 
     public void RepeatLevelScreen()
     {
+        player.EnableSpawn();
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
         unitSelectionScreen.SetActive(true);
         ClearLevel();
