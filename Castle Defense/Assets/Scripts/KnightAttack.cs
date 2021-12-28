@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class KnightAttack : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class KnightAttack : MonoBehaviour
 
     //doctor
     public GameObject healPool;
-
+    public 
     void Awake()
     {
         type = knightManager.knight.name;
@@ -77,7 +79,8 @@ public class KnightAttack : MonoBehaviour
 
         else if (type == "Calvalry")
         {
-            Vector2 target = Vector2.zero;
+              TextMeshProUGUI tmp = GameObject.FindWithTag("Respawn").GetComponent<TextMeshProUGUI>();
+              Vector2 target = Vector2.zero;
             float attackLength = knightManager.attackTime;
             float startTime = 0;
             bool attack = true;
@@ -90,7 +93,8 @@ public class KnightAttack : MonoBehaviour
             faceEnemy.enabled = false;
             startTime = Time.time;
             spear.SetActive(true);
-
+            Debug.Log(target);
+            tmp.text = target.ToString();
             while (attack)
             {
                 rb.AddForce(target * 20, ForceMode2D.Force);

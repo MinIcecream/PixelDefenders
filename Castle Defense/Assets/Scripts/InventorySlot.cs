@@ -6,7 +6,7 @@ public class InventorySlot : MonoBehaviour
 {
     public GameObject image;
     public PlayerInventory invenMan;
-    [Range(1,6)]
+    [Range(1,7)]
     public int slotNum;
     private string character;
 

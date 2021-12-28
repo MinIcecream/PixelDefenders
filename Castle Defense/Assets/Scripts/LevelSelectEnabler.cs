@@ -7,7 +7,7 @@ using TMPro;
 public class LevelSelectEnabler : MonoBehaviour
 {
     public GameObject button;
-    public SceneChangeManager sceneMan;
+    SceneChangeManager sceneMan;
 
     // Start is called before the first frame update
     void Start()

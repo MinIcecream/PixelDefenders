@@ -166,9 +166,9 @@ TextureImporter:
       name: Button-export_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 132
-        width: 59
+        width: 75
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -357,7 +357,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 16
-        width: 180
+        width: 198
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}

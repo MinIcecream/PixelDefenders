@@ -99,6 +99,10 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator SpawnTimer()
     {
+        if(character == null)
+        {
+            yield break;
+        }
         SpawnCharacter(character);
 
         yield return new WaitForSeconds(0.25f);
