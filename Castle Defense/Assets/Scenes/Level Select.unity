@@ -740,7 +740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 7700889439229828759, guid: 8a58d5a28a461c945b44ebb0879b8c47, type: 3}
-  sceneMan: {fileID: 0}
 --- !u!114 &1916264593
 MonoBehaviour:
   m_ObjectHideFlags: 0

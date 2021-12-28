@@ -5,14 +5,12 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<string>chars = new List<string>();
-    public GameObject[] slots = new GameObject[6];
-    public GameObject[] iconSelectionSlots = new GameObject[6];
+    public GameObject[] slots = new GameObject[7];
+    public GameObject[] iconSelectionSlots = new GameObject[7];
     public string selectedChar;
 
     void Start()
     {
-        /*PlayerPrefs.SetInt("CompletedLevel", 0);
-        PlayerPrefs.SetInt("CompletedScene", 0);*/
         UpdateAllSlots();
     }
 
@@ -55,15 +53,15 @@ public class PlayerInventory : MonoBehaviour
     //update icon selection bar and inventory bar
     public void UpdateAllSlots()
     {
-        for (int i =0; i<6; i++)
+        for (int i =0; i<7; i++)
         {
             slots[i].GetComponent<InventorySlot>().ResetSlot();
-            iconSelectionSlots[i].GetComponent<CharacterIconSlot>().ResetSlot();
+           // iconSelectionSlots[i].GetComponent<CharacterIconSlot>().ResetSlot();
 
             if (chars[i] != "")
             {
                 slots[i].GetComponent<InventorySlot>().SetCharacter(chars[i]);
-                iconSelectionSlots[i].GetComponent<CharacterIconSlot>().SetCharacter(chars[i]);
+               // iconSelectionSlots[i].GetComponent<CharacterIconSlot>().SetCharacter(chars[i]);
             }
         }
     }

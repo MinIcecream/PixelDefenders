@@ -14,6 +14,11 @@ public class LevelManager : MonoBehaviour
     IEnumerator coroutine;
     public PlayerControl player;
 
+    void Start()
+    {
+
+        StartCurrentLevel();
+    }
     IEnumerator PassiveIncome(float delay)
     {
         while (true)
