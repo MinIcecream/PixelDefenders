@@ -12,83 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  gold: 270
+  gold: 200
   enemies:
   - name: Orc Chieftan
-    transform: {x: -11.207757, y: 6.9775243}
+    transform: {x: -6.995528, y: 7.4230766}
   - name: Orc Chieftan
-    transform: {x: 11.4602995, y: 6.6528516}
-  - name: Orc Chieftan
-    transform: {x: 0.008208394, y: 7.7744484}
+    transform: {x: 7.2144313, y: 7.5133905}
   - name: Orc Druid
-    transform: {x: -13.214825, y: 7.42026}
+    transform: {x: 4.926386, y: 9.04879}
   - name: Orc Druid
-    transform: {x: -11.414367, y: 8.541857}
+    transform: {x: 7.0940075, y: 9.139107}
   - name: Orc Druid
-    transform: {x: 11.666893, y: 8.305719}
+    transform: {x: 9.201419, y: 8.627308}
   - name: Orc Druid
-    transform: {x: 13.67396, y: 6.89}
+    transform: {x: -7.266488, y: 9.199319}
   - name: Orc Druid
-    transform: {x: -1.571119, y: 9.703154}
+    transform: {x: -4.9483366, y: 9.259531}
   - name: Orc Druid
-    transform: {x: 1.5117381, y: 9.7651205}
-  - name: Chomper
-    transform: {x: -0.5641556, y: 8.665206}
-  - name: Chomper
-    transform: {x: 0.5047747, y: 8.665206}
-  - name: Chomper
-    transform: {x: -1.8499703, y: 8.789141}
-  - name: Chomper
-    transform: {x: 1.991982, y: 8.69619}
-  - name: Orc Chieftan
-    transform: {x: -6.4735994, y: 7.4243546}
-  - name: Orc Chieftan
-    transform: {x: -2.9472566, y: 7.3698235}
-  - name: Orc Chieftan
-    transform: {x: 3.850951, y: 7.4061775}
-  - name: Orc Chieftan
-    transform: {x: 7.340934, y: 7.4607105}
-  - name: Chomper
-    transform: {x: -7.198489, y: 8.38109}
-  - name: Chomper
-    transform: {x: -6.087392, y: 8.327327}
-  - name: Chomper
-    transform: {x: -3.51, y: 8.36}
-  - name: Chomper
-    transform: {x: -2.33, y: 8.33}
-  - name: Chomper
-    transform: {x: 3.1239493, y: 8.345231}
-  - name: Chomper
-    transform: {x: 4.1633635, y: 8.345231}
-  - name: Chomper
-    transform: {x: 6.564768, y: 8.452757}
-  - name: Chomper
-    transform: {x: 7.9088373, y: 8.434835}
-  - name: Orc Druid
-    transform: {x: -2.8974843, y: 9.420471}
-  - name: Orc Druid
-    transform: {x: -6.6788006, y: 9.456313}
-  - name: Orc Druid
-    transform: {x: 3.5540345, y: 9.52798}
-  - name: Orc Druid
-    transform: {x: 7.191983, y: 9.474217}
-  - name: Orc Chieftan
-    transform: {x: -8.084565, y: 7.3692703}
-  - name: Orc Chieftan
-    transform: {x: 0.005715223, y: 7.081339}
-  - name: Orc Chieftan
-    transform: {x: 8.878767, y: 7.01972}
-  - name: Orc Druid
-    transform: {x: -9.976469, y: 8.036423}
-  - name: Orc Druid
-    transform: {x: -7.5425415, y: 8.590988}
-  - name: Orc Druid
-    transform: {x: 0.15975976, y: 8.252087}
-  - name: Orc Druid
-    transform: {x: 9.156054, y: 8.375321}
-  - name: Orc Druid
-    transform: {x: 10.388422, y: 7.9748015}
-  - name: Chomper
-    transform: {x: 5.1200476, y: 7.4818544}
-  - name: Chomper
-    transform: {x: -4.1843348, y: 7.7591333}
+    transform: {x: -9.133052, y: 7.694026}

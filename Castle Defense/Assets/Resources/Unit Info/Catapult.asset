@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Catapult
   m_EditorClassIdentifier: 
   cost: 100
-  health: 240
+  health: 260
   damage: 55
   range: 8
   movement: 0.2

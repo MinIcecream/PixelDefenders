@@ -4879,7 +4879,7 @@ GameObject:
   - component: {fileID: 1358600498839534473}
   m_Layer: 10
   m_Name: Crossbow Bolt
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4964,6 +4964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2411609986329341824}
+  enemy: {fileID: 0}
   particles: {fileID: 6280855559217875712}
 --- !u!50 &2411609986329341824
 Rigidbody2D:

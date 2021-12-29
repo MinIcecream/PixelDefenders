@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3442678302768830907}
   m_Layer: 10
   m_Name: Boulder
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4961,9 +4961,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009132385, y: 0}
+  m_Offset: {x: -0.0076699853, y: 0}
   serializedVersion: 2
-  m_Radius: 0.58827806
+  m_Radius: 0.86175627
 --- !u!50 &2071025917450944924
 Rigidbody2D:
   serializedVersion: 4

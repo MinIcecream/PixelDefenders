@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Orc Giant
   m_EditorClassIdentifier: 
-  cost: 75
-  health: 320
+  cost: 70
+  health: 280
   damage: 60
   range: 1.2
   movement: 0.8

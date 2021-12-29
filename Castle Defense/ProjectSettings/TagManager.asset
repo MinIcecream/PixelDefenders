@@ -20,6 +20,7 @@ TagManager:
   - Inventory
   - UnitIcon
   - LockPoint
+  - Projectile
   layers:
   - Default
   - TransparentFX

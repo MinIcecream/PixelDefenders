@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
-  gold: 270
+  gold: 300
   enemies:
   - name: Orc Chieftan
     transform: {x: 12.087413, y: -1.4620893}
@@ -26,8 +26,6 @@ MonoBehaviour:
     transform: {x: 14.71942, y: -2.0203938}
   - name: Orc Chieftan
     transform: {x: -13.35, y: -1.8}
-  - name: Orc Chieftan
-    transform: {x: -14.2, y: -2.71}
   - name: Orc Chieftan
     transform: {x: -14.534394, y: -0.88}
   - name: Orc Druid

@@ -153,6 +153,10 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(particle);
         }
+        foreach (GameObject projectile in GameObject.FindGameObjectsWithTag("Projectile"))
+        {
+            Destroy(projectile);
+        }
     }
 
 
