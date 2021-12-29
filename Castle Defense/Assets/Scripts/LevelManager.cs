@@ -41,11 +41,11 @@ public class LevelManager : MonoBehaviour
                 //else, scene +1 and level resets.
 
                 //if ur past the completed scene:
-                if(CurrentLevelManager.CurrentScene() > PlayerPrefs.GetInt("CompletedScene"))
+                if(CurrentLevelManager.CurrentScene() > PlayerPrefs.GetInt("CompletedScene",0))
                 {
                     if(CurrentLevelManager.CurrentLevel() < CurrentLevelManager.LevelsInCurrentScene())
                     {
-                        if(CurrentLevelManager.CurrentLevel()>PlayerPrefs.GetInt("CompletedLevel", 1))
+                        if(CurrentLevelManager.CurrentLevel()>PlayerPrefs.GetInt("CompletedLevel", 0))
                         {
                             PlayerPrefs.SetInt("CompletedLevel", CurrentLevelManager.CurrentLevel());
                         }

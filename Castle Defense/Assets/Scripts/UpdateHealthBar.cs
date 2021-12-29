@@ -12,7 +12,7 @@ public class UpdateHealthBar : MonoBehaviour
 
     void Awake()
     {
-        health.SetMaxHealth(100);
+        health.SetMaxHealth(200);
         man = GameObject.FindWithTag("LevelManager").GetComponent<LevelManager>();
         healthUI = GameObject.FindWithTag("HealthUI").GetComponent<Slider>();
     }

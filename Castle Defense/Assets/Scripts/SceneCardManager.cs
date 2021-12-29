@@ -16,13 +16,13 @@ public class SceneCardManager : MonoBehaviour
         button.GetComponent<Image>().color = card.buttonColor;
         sceneNumberTmp.text = "Scene: " + card.sceneNumber;
 
-        if (PlayerPrefs.GetInt("CompletedScene", 1) >= card.sceneNumber)
+        if (PlayerPrefs.GetInt("CompletedScene", 0) >= card.sceneNumber)
         {
             card.completedLevel = card.totalLevels;
         }
-        else if(PlayerPrefs.GetInt("CompletedScene", 1) == card.sceneNumber - 1)
+        else if(PlayerPrefs.GetInt("CompletedScene", 0) == card.sceneNumber - 1)
         {
-            card.completedLevel = PlayerPrefs.GetInt("CompletedLevel", 1);
+            card.completedLevel = PlayerPrefs.GetInt("CompletedLevel", 0);
         }
         else
         {
