@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CollapseHotbar : MonoBehaviour
 {
     public Sprite up, down;
     float y1 = -39.2f;
@@ -39,8 +39,8 @@ public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             Expand();
         }
     }
-
-    #if UNITY_EDITOR
+/*
+    #if UNITY_EDITOR  
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
@@ -75,5 +75,5 @@ public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         
     }
-    #endif
+    #endif*/
 }

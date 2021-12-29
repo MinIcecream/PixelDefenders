@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  gold: 140
+  gold: 270
   enemies:
   - name: Orc Chieftan
     transform: {x: -11.207757, y: 6.9775243}
@@ -72,3 +72,23 @@ MonoBehaviour:
     transform: {x: 3.5540345, y: 9.52798}
   - name: Orc Druid
     transform: {x: 7.191983, y: 9.474217}
+  - name: Orc Chieftan
+    transform: {x: -8.084565, y: 7.3692703}
+  - name: Orc Chieftan
+    transform: {x: 0.005715223, y: 7.081339}
+  - name: Orc Chieftan
+    transform: {x: 8.878767, y: 7.01972}
+  - name: Orc Druid
+    transform: {x: -9.976469, y: 8.036423}
+  - name: Orc Druid
+    transform: {x: -7.5425415, y: 8.590988}
+  - name: Orc Druid
+    transform: {x: 0.15975976, y: 8.252087}
+  - name: Orc Druid
+    transform: {x: 9.156054, y: 8.375321}
+  - name: Orc Druid
+    transform: {x: 10.388422, y: 7.9748015}
+  - name: Chomper
+    transform: {x: 5.1200476, y: 7.4818544}
+  - name: Chomper
+    transform: {x: -4.1843348, y: 7.7591333}

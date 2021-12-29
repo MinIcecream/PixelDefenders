@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
-  gold: 160
+  gold: 220
   enemies:
   - name: Orc Giant
     transform: {x: 0.09264219, y: 7.62624}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Orc Chieftan
   m_EditorClassIdentifier: 
-  cost: 35
+  cost: 50
   health: 250
   damage: 60
   range: 1.2

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Orc Druid
   m_EditorClassIdentifier: 
-  cost: 15
+  cost: 20
   health: 70
-  damage: 40
+  damage: 30
   range: 4
   movement: 0.8
-  attackDuration: 2.5
+  attackDuration: 3

@@ -10,9 +10,9 @@ public class LevelManager : MonoBehaviour
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
     //public GameObject unitSelectionScreen;
-    IEnumerator coroutine;
+    IEnumerator coroutine, incomeCoroutine;
     public PlayerControl player;
-
+    
     void Start()
     {
 
@@ -132,7 +132,7 @@ public class LevelManager : MonoBehaviour
     public void ClearLevel()
     {
         StopCoroutine(coroutine);
-
+        StopCoroutine(incomeCoroutine);
         Camera.main.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
         Camera.main.orthographicSize = 6;
  
@@ -165,9 +165,12 @@ public class LevelManager : MonoBehaviour
         Instantiate(castle, castlePos, Quaternion.identity);
 
         gold.SetGold((Resources.Load<Level>("Levels/"+CurrentLevelManager.CurrentScene()+"/"+levelNum.ToString())).gold);
-      //  StartCoroutine(PassiveIncome(0.5f));
-        coroutine = CheckForWin(0.5f);
+
+        incomeCoroutine = PassiveIncome(1f);
+        coroutine = CheckForWin(1f);
+
         StartCoroutine(coroutine);
+        StartCoroutine(incomeCoroutine);
 
         Level level = Resources.Load<Level>("Levels/" + CurrentLevelManager.CurrentScene() + "/"+ levelNum.ToString());
 
