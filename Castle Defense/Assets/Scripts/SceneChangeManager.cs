@@ -29,4 +29,10 @@ public class SceneChangeManager : MonoBehaviour
     {
         AudioManager.Play("Click");
     }
+    void Update()
+    {
+        Debug.Log(PlayerPrefs.GetInt("CompletedScene",0));
+
+        Debug.Log(PlayerPrefs.GetInt("CompletedLevel", 0));
+    }
 }

@@ -10,7 +10,7 @@ public class SetSceneSelectInteractable : MonoBehaviour
     {
         foreach (GameObject card in GameObject.FindGameObjectsWithTag("SceneCard"))
         {
-            if (card.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedScene", 1) + 1)
+            if (card.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedScene", 0) + 1)
             {
                 card.transform.GetChild(1).GetComponent<Button>().interactable = true;
             }

@@ -9,7 +9,6 @@ public class LevelSelectEnabler : MonoBehaviour
     public GameObject button;
     SceneChangeManager sceneMan;
 
-    // Start is called before the first frame update
     void Start()
     {
         sceneMan = GameObject.FindWithTag("SceneChangeManager").GetComponent<SceneChangeManager>();
@@ -18,19 +17,19 @@ public class LevelSelectEnabler : MonoBehaviour
         foreach (GameObject button in GameObject.FindGameObjectsWithTag("LevelButton"))
         {
             //if u already beat the entire scene, all levels enabled.
-            if(PlayerPrefs.GetInt("CompletedScene", 1) >= CurrentLevelManager.CurrentScene())
+            if(PlayerPrefs.GetInt("CompletedScene", 0) >= CurrentLevelManager.CurrentScene())
             {
                 button.GetComponent<Button>().interactable = true;
                 button.transform.GetChild(0).gameObject.SetActive(true);
             }
 
             //if 
-            else if (button.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedLevel", 1))
+            else if (button.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedLevel", 0))
             {
                 button.GetComponent<Button>().interactable = true;
                 button.transform.GetChild(0).gameObject.SetActive(true);
             }
-            else if (button.GetComponent<ButtonID>().GetID() == PlayerPrefs.GetInt("CompletedLevel", 1) + 1)
+            else if (button.GetComponent<ButtonID>().GetID() == PlayerPrefs.GetInt("CompletedLevel", 0) + 1)
             {
                 button.GetComponent<Button>().interactable = true;
             }
