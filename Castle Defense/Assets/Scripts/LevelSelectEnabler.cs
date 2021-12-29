@@ -48,12 +48,13 @@ public class LevelSelectEnabler : MonoBehaviour
             var newButton = Instantiate(button, transform.position, Quaternion.identity);
  
             newButton.transform.SetParent(this.gameObject.transform);
-            newButton.GetComponent<ButtonID>().SetID(i);
-            newButton.name = (i).ToString();
-            newButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = (i).ToString();
+            newButton.transform.localScale = new Vector2(1, 1); ;
+             newButton.GetComponent<ButtonID>().SetID(i);
+             newButton.name = (i).ToString();
+             newButton.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = (i).ToString();
 
-            newButton.GetComponent<Button>().onClick.AddListener(() => { SceneChangeManager.LoadLevel(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); sceneMan.ButtonClick(); });
-
+             newButton.GetComponent<Button>().onClick.AddListener(() => { SceneChangeManager.LoadLevel(); CurrentLevelManager.SetCurrentLevel(newButton.GetComponent<ButtonID>().GetID()); sceneMan.ButtonClick(); });
+            
         }
     }
 }
