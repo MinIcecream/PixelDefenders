@@ -12,4 +12,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  enemies: []
+  gold: 140
+  enemies:
+  - name: Orc Chieftan
+    transform: {x: -11.207757, y: 6.9775243}
+  - name: Orc Chieftan
+    transform: {x: 11.4602995, y: 6.6528516}
+  - name: Orc Chieftan
+    transform: {x: 0.008208394, y: 7.7744484}
+  - name: Orc Druid
+    transform: {x: -13.214825, y: 7.42026}
+  - name: Orc Druid
+    transform: {x: -11.414367, y: 8.541857}
+  - name: Orc Druid
+    transform: {x: 11.666893, y: 8.305719}
+  - name: Orc Druid
+    transform: {x: 13.67396, y: 6.89}
+  - name: Orc Druid
+    transform: {x: -1.571119, y: 9.703154}
+  - name: Orc Druid
+    transform: {x: 1.5117381, y: 9.7651205}
+  - name: Chomper
+    transform: {x: -0.5641556, y: 8.665206}
+  - name: Chomper
+    transform: {x: 0.5047747, y: 8.665206}
+  - name: Chomper
+    transform: {x: -1.8499703, y: 8.789141}
+  - name: Chomper
+    transform: {x: 1.991982, y: 8.69619}
+  - name: Orc Chieftan
+    transform: {x: -6.4735994, y: 7.4243546}
+  - name: Orc Chieftan
+    transform: {x: -2.9472566, y: 7.3698235}
+  - name: Orc Chieftan
+    transform: {x: 3.850951, y: 7.4061775}
+  - name: Orc Chieftan
+    transform: {x: 7.340934, y: 7.4607105}
+  - name: Chomper
+    transform: {x: -7.198489, y: 8.38109}
+  - name: Chomper
+    transform: {x: -6.087392, y: 8.327327}
+  - name: Chomper
+    transform: {x: -3.51, y: 8.36}
+  - name: Chomper
+    transform: {x: -2.33, y: 8.33}
+  - name: Chomper
+    transform: {x: 3.1239493, y: 8.345231}
+  - name: Chomper
+    transform: {x: 4.1633635, y: 8.345231}
+  - name: Chomper
+    transform: {x: 6.564768, y: 8.452757}
+  - name: Chomper
+    transform: {x: 7.9088373, y: 8.434835}
+  - name: Orc Druid
+    transform: {x: -2.8974843, y: 9.420471}
+  - name: Orc Druid
+    transform: {x: -6.6788006, y: 9.456313}
+  - name: Orc Druid
+    transform: {x: 3.5540345, y: 9.52798}
+  - name: Orc Druid
+    transform: {x: 7.191983, y: 9.474217}

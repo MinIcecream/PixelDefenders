@@ -46,26 +46,37 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: f30697abe005a6846adb6193440c65c2, type: 3}
+    isMusic: 1
     volume: 1
     pitch: 3
     source: {fileID: 0}
   - name: Click
     clip: {fileID: 8300000, guid: 2eaa9037bde98714e9f08be376fcbffb, type: 3}
+    isMusic: 0
     volume: 1
     pitch: 3
     source: {fileID: 0}
   - name: Spawn
     clip: {fileID: 8300000, guid: 519daea25dc40ac43a1eb4524f0ef83f, type: 3}
+    isMusic: 0
     volume: 0.128
     pitch: 1
     source: {fileID: 0}
   - name: Crash
     clip: {fileID: 8300000, guid: b10ee9eef801a634cbea46daa743e979, type: 3}
+    isMusic: 0
     volume: 0.4
     pitch: 1
     source: {fileID: 0}
   - name: Pop
     clip: {fileID: 8300000, guid: 76140f14632894f4f9cbca4904ee7acd, type: 3}
+    isMusic: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Fanfare
+    clip: {fileID: 8300000, guid: 5504da8d90b216d42ba958ec4f9ec762, type: 3}
+    isMusic: 0
     volume: 1
     pitch: 1
     source: {fileID: 0}

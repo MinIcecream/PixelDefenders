@@ -6,11 +6,10 @@ using System.Linq;
 public class LevelManager : MonoBehaviour
 {
     public CoinManager gold;
-    public int startGold;
     public GameObject VictoryMenu, DefeatMenu, castle, pointer;
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
-    public GameObject unitSelectionScreen;
+    //public GameObject unitSelectionScreen;
     IEnumerator coroutine;
     public PlayerControl player;
 
@@ -59,6 +58,7 @@ public class LevelManager : MonoBehaviour
                 }
 
                 OpenVictoryScreen();
+                AudioManager.Play("Fanfare");
                 break;
             }
         }     
@@ -88,8 +88,9 @@ public class LevelManager : MonoBehaviour
     public void NextLevelScreen()
     {
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel() + 1);
-        unitSelectionScreen.SetActive(true);
+      //  unitSelectionScreen.SetActive(true);
         ClearLevel();
+        StartCurrentLevel();
     }
 
     //Defeat 
@@ -97,8 +98,9 @@ public class LevelManager : MonoBehaviour
     {
         player.EnableSpawn();
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
-        unitSelectionScreen.SetActive(true);
+       // unitSelectionScreen.SetActive(true);
         ClearLevel();
+        StartCurrentLevel();
     }
 
     public void OpenVictoryScreen()
@@ -162,8 +164,8 @@ public class LevelManager : MonoBehaviour
         Destroy(currentCastle);
         Instantiate(castle, castlePos, Quaternion.identity);
 
-        gold.SetGold(startGold);
-        StartCoroutine(PassiveIncome(0.5f));
+        gold.SetGold((Resources.Load<Level>("Levels/"+CurrentLevelManager.CurrentScene()+"/"+levelNum.ToString())).gold);
+      //  StartCoroutine(PassiveIncome(0.5f));
         coroutine = CheckForWin(0.5f);
         StartCoroutine(coroutine);
 

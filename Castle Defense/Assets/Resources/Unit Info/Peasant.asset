@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
-  m_Name: Orc Druid
+  m_Name: Peasant
   m_EditorClassIdentifier: 
-  cost: 25
+  cost: 10
   health: 70
-  damage: 40
-  range: 4
-  movement: 0.8
-  attackDuration: 2.5
+  damage: 10
+  range: 0.7
+  movement: 1.2
+  attackDuration: 1.3

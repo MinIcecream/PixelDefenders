@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
+  gold: 40
   enemies:
   - name: Chomper
     transform: {x: -0.5980649, y: 6.2018604}

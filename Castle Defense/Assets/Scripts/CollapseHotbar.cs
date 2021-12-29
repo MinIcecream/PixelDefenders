@@ -61,8 +61,6 @@ public class CollapseHotbar : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-
-        Debug.Log("DFJUIOS");
         Color col = GetComponent<Image>().color;
         col.a = 0.5f;
 
