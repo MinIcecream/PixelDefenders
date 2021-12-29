@@ -19,9 +19,9 @@ public class ToggleAudio : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("MusicEnabled", 0);
-
             GetComponent<Image>().overrideSprite = disabledImg;
         }
+        AudioManager.UpdateAudio();
     }
 
     public void ToggleSFX()
@@ -35,8 +35,8 @@ public class ToggleAudio : MonoBehaviour
         {
             PlayerPrefs.SetInt("SFXEnabled", 0);
             GetComponent<Image>().overrideSprite = disabledImg;
-
         }
+        AudioManager.UpdateAudio();
     }
 
     void Awake()
@@ -51,7 +51,12 @@ public class ToggleAudio : MonoBehaviour
             {
                 GetComponent<Image>().overrideSprite = disabledImg;
             }
+
+            //just update audio once
+
+            AudioManager.UpdateAudio();
         }
+
         else
         {
             if (PlayerPrefs.GetInt("SFXEnabled", 1) == 1)
@@ -64,6 +69,6 @@ public class ToggleAudio : MonoBehaviour
             }
         }
 
-        //set music volumes here
+         
     }
 }

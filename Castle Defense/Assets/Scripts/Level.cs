@@ -22,6 +22,7 @@ public class Level : ScriptableObject
             return transform;
         }
     }
+    public int gold;
     public List<enemyPos> enemies;
 
     public void AddEnemy(string name, Vector2 pos)

@@ -12,4 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
-  enemies: []
+  gold: 200
+  enemies:
+  - name: Orc Giant
+    transform: {x: -12.585253, y: -1.1605923}
+  - name: Chomper
+    transform: {x: -13.975819, y: -0.3684982}
+  - name: Chomper
+    transform: {x: -14.08143, y: -1.283807}
+  - name: Chomper
+    transform: {x: -14.028624, y: -2.3575346}
+  - name: Orc Druid
+    transform: {x: -14.979137, y: -0.86135674}
+  - name: Orc Druid
+    transform: {x: -15.031944, y: -1.8822782}
+  - name: Orc Giant
+    transform: {x: 12.81, y: -1.38}
+  - name: Chomper
+    transform: {x: 14.17244, y: -1.4786783}
+  - name: Chomper
+    transform: {x: 14.118295, y: -0.49053794}
+  - name: Chomper
+    transform: {x: 13.942325, y: -2.6833973}
+  - name: Orc Druid
+    transform: {x: 15.51252, y: -1.1808826}
+  - name: Orc Druid
+    transform: {x: 15.566666, y: -2.3179207}
+  - name: Orc Chieftan
+    transform: {x: -1.1842415, y: 7.31}
+  - name: Orc Chieftan
+    transform: {x: 1.5724969, y: 7.206054}
+  - name: Orc Chieftan
+    transform: {x: 0.045687854, y: 6.7819405}
+  - name: Orc Druid
+    transform: {x: -0.25119168, y: 8.266338}
+  - name: Orc Druid
+    transform: {x: 0.65358406, y: 8.223927}

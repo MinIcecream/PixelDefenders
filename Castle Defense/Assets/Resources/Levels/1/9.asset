@@ -12,4 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 9
   m_EditorClassIdentifier: 
-  enemies: []
+  gold: 180
+  enemies:
+  - name: Orc Giant
+    transform: {x: -3.61864, y: 7.582159}
+  - name: Orc Giant
+    transform: {x: 4.230988, y: 7.4564214}
+  - name: Orc Druid
+    transform: {x: -6.726159, y: 8.138998}
+  - name: Orc Druid
+    transform: {x: -4.049741, y: 9.037125}
+  - name: Orc Druid
+    transform: {x: -0.99610966, y: 9.07305}
+  - name: Orc Druid
+    transform: {x: 1.5186455, y: 9.126937}
+  - name: Orc Druid
+    transform: {x: 4.392651, y: 9.108974}
+  - name: Orc Druid
+    transform: {x: 7.266657, y: 7.3127213}
+  - name: Orc Druid
+    transform: {x: -2.2741332, y: 9.032514}
+  - name: Orc Druid
+    transform: {x: 2.9422827, y: 9.22778}
+  - name: Orc Druid
+    transform: {x: 0.096965075, y: 9.032514}
+  - name: Orc Druid
+    transform: {x: -5.1752415, y: 8.586189}
+  - name: Orc Druid
+    transform: {x: 5.843391, y: 8.4467125}

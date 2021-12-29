@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class InventorySlot : MonoBehaviour
 {
-    public GameObject image;
+    public GameObject image,text;
     public PlayerInventory invenMan;
     [Range(1,7)]
     public int slotNum;
@@ -15,6 +17,9 @@ public class InventorySlot : MonoBehaviour
         image.SetActive(true);
         image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Units/" + newCharacter);
         character = newCharacter;
+
+        text.GetComponent<TextMeshProUGUI>().text = Resources.Load<Unit>("Unit Info/" + character).cost.ToString();
+
     }
     public void ResetSlot()
     {

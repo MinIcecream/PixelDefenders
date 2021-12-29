@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
-  m_Name: Orc Chieftan
+  m_Name: Orc Giant
   m_EditorClassIdentifier: 
-  cost: 80
-  health: 250
+  cost: 50
+  health: 320
   damage: 60
   range: 1.2
   movement: 0.8
-  attackDuration: 3
+  attackDuration: 3.5

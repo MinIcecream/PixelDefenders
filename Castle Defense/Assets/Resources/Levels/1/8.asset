@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
-  enemies: []
+  gold: 160
+  enemies:
+  - name: Orc Giant
+    transform: {x: 0.09264219, y: 7.62624}
+  - name: Orc Chieftan
+    transform: {x: -1.8305715, y: 8.008726}
+  - name: Orc Chieftan
+    transform: {x: 1.8426204, y: 7.977859}
+  - name: Chomper
+    transform: {x: -7.463827, y: 7.3142138}
+  - name: Chomper
+    transform: {x: -6.723016, y: 7.2833467}
+  - name: Chomper
+    transform: {x: -5.827868, y: 7.2524796}
+  - name: Chomper
+    transform: {x: 7.5839024, y: 7.406811}
+  - name: Chomper
+    transform: {x: 8.401882, y: 7.3605103}
+  - name: Chomper
+    transform: {x: 9.266163, y: 7.3296432}

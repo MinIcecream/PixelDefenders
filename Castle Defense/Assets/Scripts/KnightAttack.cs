@@ -79,8 +79,7 @@ public class KnightAttack : MonoBehaviour
 
         else if (type == "Calvalry")
         {
-              TextMeshProUGUI tmp = GameObject.FindWithTag("Respawn").GetComponent<TextMeshProUGUI>();
-              Vector2 target = Vector2.zero;
+            Vector2 target = Vector2.zero;
             float attackLength = knightManager.attackTime;
             float startTime = 0;
             bool attack = true;
@@ -93,17 +92,16 @@ public class KnightAttack : MonoBehaviour
             faceEnemy.enabled = false;
             startTime = Time.time;
             spear.SetActive(true);
-            Debug.Log(target);
-            tmp.text = target.ToString();
+
             while (attack)
             {
-                rb.AddForce(target * 20, ForceMode2D.Force);
+                rb.AddForce(target * 200, ForceMode2D.Force);
                 if(Time.time - startTime >= attackLength)
                 {
                     rb.velocity = Vector2.zero;
                     attack = false;
                 }
-                yield return null;
+                yield return new WaitForSeconds(0.02f);
             }
             faceEnemy.enabled = true;
             spear.SetActive(false);

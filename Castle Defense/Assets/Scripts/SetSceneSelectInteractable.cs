@@ -17,6 +17,7 @@ public class SetSceneSelectInteractable : MonoBehaviour
             else
             {
                 card.transform.GetChild(1).GetComponent<Button>().interactable = false;
+                card.transform.GetChild(4).gameObject.SetActive(true);
             }
         }
     }
