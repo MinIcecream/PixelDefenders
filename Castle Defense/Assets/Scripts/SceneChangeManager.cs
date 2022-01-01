@@ -29,4 +29,9 @@ public class SceneChangeManager : MonoBehaviour
     {
         AudioManager.Play("Click");
     }
+
+    void Update()
+    {  
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+    }
 }
