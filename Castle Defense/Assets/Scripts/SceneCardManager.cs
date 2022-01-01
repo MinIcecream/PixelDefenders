@@ -14,7 +14,7 @@ public class SceneCardManager : MonoBehaviour
     {
         GetComponent<Image>().color = card.mainColor;
         button.GetComponent<Image>().color = card.buttonColor;
-        sceneNumberTmp.text = "Scene: " + card.sceneNumber;
+        sceneNumberTmp.text = "Scene " + card.sceneNumber;
 
         if (PlayerPrefs.GetInt("CompletedScene", 0) >= card.sceneNumber)
         {

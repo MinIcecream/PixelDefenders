@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 13
+  m_EditorClassIdentifier: 
+  gold: 250
+  enemies:
+  - name: Chomper
+    transform: {x: -14.220277, y: -2.7984362}
+  - name: Chomper
+    transform: {x: -14.190111, y: -3.5525815}
+  - name: Chomper
+    transform: {x: -14.190111, y: -4.42739}
+  - name: Chomper
+    transform: {x: -14.159945, y: -5.2720327}
+  - name: Chomper
+    transform: {x: -14.91409, y: -3.1302602}
+  - name: Chomper
+    transform: {x: -14.9744215, y: -4.0955663}
+  - name: Chomper
+    transform: {x: -14.91409, y: -5.0005403}
+  - name: Orc Druid
+    transform: {x: -15.939728, y: -3.1302602}
+  - name: Orc Druid
+    transform: {x: -15.879396, y: -4.1860633}
+  - name: Orc Druid
+    transform: {x: -15.939728, y: -5.5133586}
+  - name: Orc Chieftan
+    transform: {x: -5.83, y: 13.081227}
+  - name: Orc Druid
+    transform: {x: -7.6921577, y: 14.189719}
+  - name: Orc Druid
+    transform: {x: -6.8246965, y: 14.248331}
+  - name: Orc Druid
+    transform: {x: -5.8517337, y: 14.365556}
+  - name: Orc Druid
+    transform: {x: -4.913938, y: 14.248331}
+  - name: Orc Druid
+    transform: {x: -3.999587, y: 14.060772}
+  - name: Orc Giant
+    transform: {x: 26.741432, y: -1.960237}
+  - name: Chomper
+    transform: {x: 27.620956, y: -1.510703}
+  - name: Chomper
+    transform: {x: 28.050945, y: -2.1556869}
+  - name: Chomper
+    transform: {x: 27.679592, y: -3.15248}
+  - name: Orc Druid
+    transform: {x: 29.751358, y: -1.1784385}
+  - name: Orc Druid
+    transform: {x: 29.809992, y: -2.057962}
+  - name: Orc Druid
+    transform: {x: 29.770903, y: -3.3674746}
+  - name: Orc Druid
+    transform: {x: 29.673178, y: -4.305633}

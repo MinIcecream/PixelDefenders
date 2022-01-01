@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Soldier
   m_EditorClassIdentifier: Assembly-CSharp::Unit
-  cost: 20
+  cost: 15
   health: 110
   damage: 30
   range: 0.6
   movement: 1
-  attackDuration: 1.8
+  attackDuration: 1.3

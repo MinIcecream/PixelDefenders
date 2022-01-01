@@ -13,6 +13,9 @@ public class OgreAttack : MonoBehaviour
     //giant
     public GameObject club;
 
+    //assassin
+    public GameObject smoke;
+
     void Awake()
     {
         type = orcManager.ogre.name;
@@ -22,6 +25,7 @@ public class OgreAttack : MonoBehaviour
     {
         if (type == "Orc Druid")
         {
+            orcManager.anim.SetTrigger("Attack");
             yield return new WaitForSeconds(orcManager.attackTime);
 
             var newSpell = Instantiate(spell, transform.position, Quaternion.identity);
@@ -36,6 +40,7 @@ public class OgreAttack : MonoBehaviour
 
         else if (type == "Orc Giant")
         {
+            orcManager.anim.SetTrigger("Attack");
             yield return new WaitForSeconds(orcManager.attackTime);
             club.SetActive(true);
  
@@ -44,8 +49,35 @@ public class OgreAttack : MonoBehaviour
             orcManager.isAttacking = false;
         }
 
+        else if (type == "Orc Assassin")
+        {
+            if (Vector3.Distance(transform.position, orcManager.currentTarget.transform.position) <1f)
+            {
+                orcManager.anim.SetTrigger("Attack");
+
+                yield return new WaitForSeconds(orcManager.attackTime); 
+                if (orcManager.currentTarget)
+                {
+                    orcManager.currentTarget.GetComponent<EnemyHealth>().DealDamage(damage);
+                }
+            }
+            else
+            {
+                orcManager.anim.SetTrigger("Dash");
+
+                yield return new WaitForSeconds(orcManager.attackTime);
+                Vector2 targetPos = orcManager.currentTarget.transform.position;
+
+                Instantiate(smoke, transform.position, Quaternion.identity);
+                transform.position = targetPos;
+            }
+            yield return new WaitForSeconds(attackDuration);
+            orcManager.isAttacking = false;
+        }
+
         else
         {
+            orcManager.anim.SetTrigger("Attack");
             yield return new WaitForSeconds(orcManager.attackTime);
 
             if (orcManager.currentTarget)

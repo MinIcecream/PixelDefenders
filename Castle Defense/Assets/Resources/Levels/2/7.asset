@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 7
+  m_EditorClassIdentifier: 
+  gold: 160
+  enemies:
+  - name: Orc Giant
+    transform: {x: -1.4649847, y: 7.584559}
+  - name: Orc Giant
+    transform: {x: 2.104383, y: 7.6122284}
+  - name: Orc Assassin
+    transform: {x: -0.80091614, y: 8.940365}
+  - name: Orc Assassin
+    transform: {x: 0.85925484, y: 8.940365}
+  - name: Orc Chieftan
+    transform: {x: -0.053839266, y: 10.240832}
+  - name: Chomper
+    transform: {x: -1.1766069, y: 20.781681}
+  - name: Chomper
+    transform: {x: -0.039888144, y: 20.813257}
+  - name: Chomper
+    transform: {x: 1.1284058, y: 20.844831}
+  - name: Chomper
+    transform: {x: 1.1915567, y: 22.392033}
+  - name: Chomper
+    transform: {x: 0.05483818, y: 22.392033}
+  - name: Chomper
+    transform: {x: -1.1134558, y: 22.48676}
+  - name: Chomper
+    transform: {x: -1.148242, y: 21.57012}
+  - name: Chomper
+    transform: {x: -0.01193428, y: 21.526417}
+  - name: Chomper
+    transform: {x: 1.1899296, y: 21.504564}
+  - name: Chomper
+    transform: {x: 0.03176987, y: 19.81103}
+  - name: Chomper
+    transform: {x: -1.0826857, y: 19.887512}
+  - name: Chomper
+    transform: {x: 1.1680773, y: 19.778252}
+  - name: Orc Assassin
+    transform: {x: -1.2575012, y: 23.449402}
+  - name: Orc Assassin
+    transform: {x: 0.009918809, y: 23.438477}
+  - name: Orc Assassin
+    transform: {x: 1.2445606, y: 23.416624}

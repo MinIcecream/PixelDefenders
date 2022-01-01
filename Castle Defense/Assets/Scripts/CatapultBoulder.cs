@@ -11,12 +11,15 @@ public class CatapultBoulder : MonoBehaviour
 
     public void Propel(GameObject target, int setDamage)
     {
-        Vector2 startPos = transform.position;
-        Vector2 targetPos = new Vector2(target.transform.position.x, target.transform.position.y + 1f);
-        enemy = target;
-        damage = setDamage;
-        rb.AddForce((targetPos - startPos) * 2, ForceMode2D.Impulse);
-        Invoke("Destroy", 5f);
+        if (target != null)
+        {
+            Vector2 startPos = transform.position;
+            Vector2 targetPos = new Vector2(target.transform.position.x, target.transform.position.y + 1f);
+            enemy = target;
+            damage = setDamage;
+            rb.AddForce((targetPos - startPos) * 2, ForceMode2D.Impulse);
+            Invoke("Destroy", 5f);
+        }
     }
 
 

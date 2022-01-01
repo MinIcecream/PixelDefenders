@@ -9,7 +9,6 @@ public class ManageTreePosition : MonoBehaviour
     void Start()
     {
         Vector2 tmpPos = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        Debug.Log(tmpPos);
 
         left.transform.position = new Vector2(-tmpPos.x, 0);
         right.transform.position = new Vector2(tmpPos.x, 0);

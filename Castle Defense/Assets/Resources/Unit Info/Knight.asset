@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 45
   health: 200
-  damage: 55
+  damage: 65
   range: 0.7
   movement: 0.8
-  attackDuration: 2.2
+  attackDuration: 1.6

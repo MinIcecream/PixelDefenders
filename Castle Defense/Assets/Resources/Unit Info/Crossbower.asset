@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ed1b6e65d20f419f60e3e70e1a3c9, type: 3}
   m_Name: Crossbower
   m_EditorClassIdentifier: 
-  cost: 25
+  cost: 20
   health: 80
   damage: 25
   range: 4.5
   movement: 1.3
-  attackDuration: 2.5
+  attackDuration: 2.3

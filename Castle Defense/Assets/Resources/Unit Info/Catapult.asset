@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 55
   range: 8
   movement: 0.2
-  attackDuration: 4
+  attackDuration: 3.5

@@ -13,6 +13,23 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.SetVolume("Theme", 1f);
+        }
+    }
+
+    public void ReturnToSelect()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.Stop("Theme");
+        }
     }
 
     public void Pause()
@@ -20,6 +37,11 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.SetVolume("Theme", 0.1f);
+        }
     }
 
 }

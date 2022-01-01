@@ -15,7 +15,10 @@ public class LevelManager : MonoBehaviour
     
     void Start()
     {
-
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.Play("Theme");
+        }
         StartCurrentLevel();
     }
     IEnumerator PassiveIncome(float delay)
@@ -52,7 +55,7 @@ public class LevelManager : MonoBehaviour
                     }
                     else
                     {
-                        PlayerPrefs.SetInt("CompletedScene", CurrentLevelManager.CurrentScene()+ 1);
+                        PlayerPrefs.SetInt("CompletedScene", CurrentLevelManager.CurrentScene());
                         PlayerPrefs.SetInt("CompletedLevel", 0);
                     }
                 }
@@ -105,13 +108,22 @@ public class LevelManager : MonoBehaviour
 
     public void OpenVictoryScreen()
     {
+ 
         VictoryMenu.SetActive(true);
         Time.timeScale = 0f;
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.SetVolume("Theme", 0.1f);
+        }
     }
     public void OpenDefeatScreen()
     {
         DefeatMenu.SetActive(true);
         Time.timeScale = 0f;
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.SetVolume("Theme", 0.1f);
+        }
     }
     public void CloseVictoryScreen()
     {
@@ -186,6 +198,11 @@ public class LevelManager : MonoBehaviour
             newPointer.GetComponent<EnemyPointer>().target = newEnemy;
             pointers.Add(newPointer);
         }
+        if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
+        {
+            AudioManager.SetVolume("Theme", 1f);
+        }
+ 
     }
 
     void SpawnPointers()

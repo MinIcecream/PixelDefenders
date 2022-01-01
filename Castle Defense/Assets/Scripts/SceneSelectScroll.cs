@@ -31,7 +31,7 @@ public class SceneSelectScroll : MonoBehaviour
         {
             cardState = state.moving;
         }
-        if (Mathf.Abs(scrollRect.velocity.x) == 0)
+        if (Mathf.Abs(scrollRect.velocity.x) == 0&& Input.GetMouseButtonUp(0))
         {
             cardState = state.locked;
         }

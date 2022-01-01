@@ -42,39 +42,29 @@ public class FieldOfView : MonoBehaviour
         //For every targetsInViewRadius it checks if they are inside the field of view
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            if(visibleTargets.Count > 0)
-            {
-               // return;
-            }
-            else
-            {
-                Transform target = targetsInViewRadius[i].transform;
-                Vector3 dirToTarget = (target.position - transform.position).normalized;
+            Transform target = targetsInViewRadius[i].transform;
+            Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-                if ((Vector2.Angle(-transform.right, dirToTarget)) < viewAngle / 2)
+            if ((Vector2.Angle(-transform.right, dirToTarget)) < viewAngle / 2)
+            {
+                float dstToTarget = Vector3.Distance(transform.position, target.position);
+                //If line draw from object to target is not interrupted by wall, add target to list of visible 
+                //targets
+                if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    float dstToTarget = Vector3.Distance(transform.position, target.position);
-                    //If line draw from object to target is not interrupted by wall, add target to list of visible 
-                    //targets
-                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                    if(target != this.gameObject.transform)
                     {
-                        if(target != this.gameObject.transform)
-                        {
-
-                            visibleTargets.Add(target);
-
-                        }
+                        visibleTargets.Add(target);
                     }
                 }
-            }
-             
+            }    
         }
         if(visibleTargets.Count > 0)
         {
+            float closestDist = 100f;
+
             for (int i = 0; i < visibleTargets.Count; i++)
             {
-                float closestDist = 100f;
-
                 float dist = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
                 if (dist < closestDist)
                 {

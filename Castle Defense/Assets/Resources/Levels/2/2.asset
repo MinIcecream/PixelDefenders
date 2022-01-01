@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  gold: 140
+  enemies:
+  - name: Orc Chieftan
+    transform: {x: -4.653405, y: 7.53}
+  - name: Orc Chieftan
+    transform: {x: -0.08420646, y: 7.462086}
+  - name: Orc Chieftan
+    transform: {x: 4.4516406, y: 7.462086}
+  - name: Orc Assassin
+    transform: {x: -6.4210515, y: 8.796159}
+  - name: Orc Assassin
+    transform: {x: -2.018612, y: 8.962918}
+  - name: Orc Assassin
+    transform: {x: 2.4171796, y: 8.796159}
+  - name: Orc Assassin
+    transform: {x: 7.253193, y: 8.462641}

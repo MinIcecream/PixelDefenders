@@ -8,9 +8,9 @@ public class ErrorMessage : MonoBehaviour
     public TextMeshProUGUI tmp;
     public float dissapearRate;
 
-    void FixedUpdate()
+    void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+        transform.position = new Vector2(transform.position.x, transform.position.y + 0.1f);
         Color newColor = tmp.faceColor;
         newColor.a -=dissapearRate;
         tmp.faceColor = newColor;

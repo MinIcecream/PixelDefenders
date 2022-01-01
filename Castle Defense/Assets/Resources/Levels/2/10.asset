@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 10
+  m_EditorClassIdentifier: 
+  gold: 400
+  enemies:
+  - name: Orc Chieftan
+    transform: {x: -5.8836837, y: 7.605645}
+  - name: Orc Chieftan
+    transform: {x: -0.030661583, y: 7.577094}
+  - name: Orc Chieftan
+    transform: {x: 4.880167, y: 7.434337}
+  - name: Chomper
+    transform: {x: -6.5974674, y: 8.747698}
+  - name: Chomper
+    transform: {x: -5.198452, y: 8.719147}
+  - name: Chomper
+    transform: {x: -3.628129, y: 8.662045}
+  - name: Chomper
+    transform: {x: -1.9436005, y: 8.690596}
+  - name: Chomper
+    transform: {x: -0.030661583, y: 8.633493}
+  - name: Chomper
+    transform: {x: 1.7109696, y: 8.547839}
+  - name: Chomper
+    transform: {x: 3.2527413, y: 8.633493}
+  - name: Chomper
+    transform: {x: 5.5368476, y: 8.662045}
+  - name: Orc Druid
+    transform: {x: -6.385663, y: 10.932761}
+  - name: Orc Druid
+    transform: {x: -4.198063, y: 10.954421}
+  - name: Orc Druid
+    transform: {x: -1.9021659, y: 10.954421}
+  - name: Orc Druid
+    transform: {x: 0.047180653, y: 10.911102}
+  - name: Orc Druid
+    transform: {x: 2.1698024, y: 10.97608}
+  - name: Orc Druid
+    transform: {x: 4.552337, y: 11.127696}
+  - name: Orc Druid
+    transform: {x: 5.938539, y: 11.0194}
+  - name: Orc Giant
+    transform: {x: -2.6837392, y: 9.804151}
+  - name: Orc Giant
+    transform: {x: 3.1162026, y: 9.862934}
+  - name: Orc Assassin
+    transform: {x: -5.5837097, y: 9.725773}
+  - name: Orc Assassin
+    transform: {x: 0.0006933212, y: 9.627801}
+  - name: Orc Assassin
+    transform: {x: 4.9776697, y: 9.784556}
+  - name: Orc Chieftan
+    transform: {x: 0.059476614, y: 12.233856}
+  - name: Chomper
+    transform: {x: -1.3317256, y: 12.175073}
+  - name: Chomper
+    transform: {x: 1.2939236, y: 12.194667}

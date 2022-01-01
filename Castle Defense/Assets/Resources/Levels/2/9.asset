@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  gold: 200
+  enemies:
+  - name: Orc Giant
+    transform: {x: 0.28150856, y: 7.667448}
+  - name: Orc Druid
+    transform: {x: -1.5898064, y: 8.699898}
+  - name: Orc Druid
+    transform: {x: 0.0018867254, y: 8.807445}
+  - name: Orc Druid
+    transform: {x: 1.4645238, y: 8.721407}
+  - name: Orc Druid
+    transform: {x: 2.5399923, y: 8.721407}
+  - name: Orc Druid
+    transform: {x: -2.9448967, y: 8.678389}
+  - name: Orc Chieftan
+    transform: {x: -12.654741, y: -2.4584615}
+  - name: Orc Druid
+    transform: {x: -13.510515, y: -2.1732037}
+  - name: Orc Druid
+    transform: {x: -13.408637, y: -3.375362}
+  - name: Orc Assassin
+    transform: {x: -13.469764, y: -2.8048463}
+  - name: Orc Chieftan
+    transform: {x: 12.264547, y: -2.4788375}
+  - name: Orc Assassin
+    transform: {x: 13.079153, y: -2.5568883}
+  - name: Orc Druid
+    transform: {x: 13.168755, y: -1.85501}
+  - name: Orc Druid
+    transform: {x: 13.138887, y: -3.5126379}

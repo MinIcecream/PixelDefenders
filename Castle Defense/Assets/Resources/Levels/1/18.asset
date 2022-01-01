@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76b2a07a199a6449b08eea171636c78, type: 3}
+  m_Name: 18
+  m_EditorClassIdentifier: 
+  gold: 200
+  enemies:
+  - name: Chomper
+    transform: {x: -3.439587, y: 8.215651}
+  - name: Chomper
+    transform: {x: -1.324097, y: 8.2760935}
+  - name: Chomper
+    transform: {x: 1.2447124, y: 8.245872}
+  - name: Chomper
+    transform: {x: 3.0277684, y: 8.094766}
+  - name: Chomper
+    transform: {x: 4.659718, y: 8.124987}
+  - name: Chomper
+    transform: {x: 6.533438, y: 8.094766}
+  - name: Chomper
+    transform: {x: 8.528043, y: 7.822774}
+  - name: Chomper
+    transform: {x: -5.675963, y: 8.18543}
+  - name: Chomper
+    transform: {x: -7.9425592, y: 8.034323}
+  - name: Chomper
+    transform: {x: -9.574509, y: 7.9738803}
+  - name: Chomper
+    transform: {x: -11.297123, y: 7.7018886}
+  - name: Orc Druid
+    transform: {x: 0.047614418, y: 18.175964}
+  - name: Orc Druid
+    transform: {x: -2.649871, y: 18.14}
+  - name: Orc Druid
+    transform: {x: -5.5271893, y: 18.319832}
+  - name: Orc Druid
+    transform: {x: -9.159802, y: 18.0321}
+  - name: Orc Druid
+    transform: {x: 4.0039263, y: 18.175964}
+  - name: Orc Druid
+    transform: {x: 6.9891434, y: 18.104033}
+  - name: Orc Druid
+    transform: {x: 9.36293, y: 18.211933}
+  - name: Orc Chieftan
+    transform: {x: -0.024318531, y: 16.845207}
+  - name: Orc Giant
+    transform: {x: -2.434072, y: 28.347399}
+  - name: Orc Giant
+    transform: {x: 2.7091334, y: 28.311432}
+  - name: Orc Druid
+    transform: {x: -1.0313798, y: 28.958828}
+  - name: Orc Druid
+    transform: {x: 0.91080976, y: 29.066729}
+  - name: Chomper
+    transform: {x: -4.1244965, y: 27.7}
+  - name: Chomper
+    transform: {x: -2.649871, y: 26.836805}
+  - name: Chomper
+    transform: {x: 4.3635907, y: 28.023699}
+  - name: Chomper
+    transform: {x: 3.5003955, y: 26.944706}

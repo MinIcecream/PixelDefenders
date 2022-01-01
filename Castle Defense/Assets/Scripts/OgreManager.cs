@@ -77,7 +77,6 @@ public class OgreManager : MonoBehaviour
             if (Vector3.Distance(transform.position, currentTarget.transform.position) < ogre.range)
             {
                 isAttacking = true;
-                anim.SetTrigger("Attack");
                 StartCoroutine(attackManager.AttackDuration(ogre.attackDuration, ogre.damage));
             }
             else
