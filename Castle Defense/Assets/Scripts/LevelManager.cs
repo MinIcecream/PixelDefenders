@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator coroutine, incomeCoroutine;
     public PlayerControl player;
     
-    void Start()
+    void Awake()
     {
         if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)
         {
@@ -168,6 +168,10 @@ public class LevelManager : MonoBehaviour
         foreach (GameObject projectile in GameObject.FindGameObjectsWithTag("Projectile"))
         {
             Destroy(projectile);
+        }
+        foreach (GameObject pool in GameObject.FindGameObjectsWithTag("HealPool"))
+        {
+            Destroy(pool);
         }
     }
 

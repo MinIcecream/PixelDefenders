@@ -19,11 +19,11 @@ public class SceneSelectScroll : MonoBehaviour
         locking
     }
 
-    state cardState = state.locked;
+    public state cardState = state.moving;
          
-    void Awake()
+    void Start()
     {
-        closestCard = GameObject.Find("Card");
+        closestCard = GameObject.FindWithTag("SceneCard");
     }
     void Update()
     {
@@ -39,7 +39,6 @@ public class SceneSelectScroll : MonoBehaviour
         if (Mathf.Abs(scrollRect.velocity.x) < 20 && cardState == state.moving)
         {
             float dist = 500f;
-            cardState = state.locking;
 
             foreach (GameObject card in GameObject.FindGameObjectsWithTag("SceneCard"))
             {
@@ -51,6 +50,7 @@ public class SceneSelectScroll : MonoBehaviour
                     closestCard = card;
                 }
             }
+            cardState = state.locking;
         }
 
         if (cardState == state.locking)

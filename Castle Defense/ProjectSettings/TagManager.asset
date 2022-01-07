@@ -21,6 +21,7 @@ TagManager:
   - UnitIcon
   - LockPoint
   - Projectile
+  - HealPool
   layers:
   - Default
   - TransparentFX
