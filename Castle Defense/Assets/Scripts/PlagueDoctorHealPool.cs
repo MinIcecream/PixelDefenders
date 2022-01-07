@@ -53,11 +53,6 @@ public class PlagueDoctorHealPool : MonoBehaviour
             {
                 unit.GetComponent<EnemyHealth>().GainHealth(rate);
             }
-
-            else if (unit.tag == "Ogre")
-            {
-                unit.GetComponent<EnemyHealth>().DealDamage(rate);
-            }
         }
     }
     void OnTriggerEnter2D(Collider2D collider)

@@ -6,7 +6,7 @@ using System.Linq;
 public class LevelManager : MonoBehaviour
 {
     public CoinManager gold;
-    public GameObject VictoryMenu, DefeatMenu, castle, pointer;
+    public GameObject VictoryMenu, DefeatMenu, castle, pointer,healthBar;
     public Vector3 castlePos, cameraPos;
     public List<GameObject> pointers = new List<GameObject>();
     //public GameObject unitSelectionScreen;
@@ -70,7 +70,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator LoadLoseScreen()
     {
         player.DisableSpawn();
-
+        healthBar.SetActive(false);
         Camera.main.transform.position = new Vector3(castlePos.x, castlePos.y, cameraPos.z);
         Invoke("OpenDefeatScreen", 4.5f);
 
@@ -99,6 +99,7 @@ public class LevelManager : MonoBehaviour
     //Defeat 
     public void RepeatLevelScreen()
     {
+        healthBar.SetActive(true);
         player.EnableSpawn();
         CurrentLevelManager.SetCurrentLevel(CurrentLevelManager.CurrentLevel());
        // unitSelectionScreen.SetActive(true);
@@ -108,7 +109,6 @@ public class LevelManager : MonoBehaviour
 
     public void OpenVictoryScreen()
     {
- 
         VictoryMenu.SetActive(true);
         Time.timeScale = 0f;
         if (PlayerPrefs.GetInt("MusicEnabled", 1) == 1)

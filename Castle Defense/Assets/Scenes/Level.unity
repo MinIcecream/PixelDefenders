@@ -10783,6 +10783,7 @@ MonoBehaviour:
   DefeatMenu: {fileID: 1761912057}
   castle: {fileID: 5097065794721169071, guid: 28cffa50c0fb07341822fa8389b554f5, type: 3}
   pointer: {fileID: 6973738341424351595, guid: 019b8424c8ca32749bfb33fe2dbb7f07, type: 3}
+  healthBar: {fileID: 2101032939}
   castlePos: {x: 0, y: -4.5, z: 0}
   cameraPos: {x: 0, y: 0, z: -10}
   pointers: []

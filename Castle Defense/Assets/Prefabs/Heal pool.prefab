@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2243883252258084199}
   m_Layer: 10
   m_Name: Heal pool
-  m_TagString: Untagged
+  m_TagString: HealPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
