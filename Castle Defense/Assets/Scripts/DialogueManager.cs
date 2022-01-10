@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         Time.timeScale = 0;
+        AudioManager.Stop("Theme");
         anim.SetBool("isOpen", true);
         nameText.text = dialogue.name;
         dialogueSentences.Clear();
@@ -84,5 +85,7 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1;
         anim.SetBool("isOpen", false);
         PlayerPrefs.SetInt("CompletedTutorial", 1);
+
+        AudioManager.Play("Theme");
     }
 }
