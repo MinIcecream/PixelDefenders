@@ -45,4 +45,10 @@ public class LogoMovement : MonoBehaviour
             }
         }
     }
+
+    [RuntimeInitializeOnLoadMethod]
+    static void OnRuntimeMethodLoad()
+    {
+        AudioManager.Play("StartUp");
+    }
 }

@@ -674,7 +674,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -788,6 +788,7 @@ MonoBehaviour:
   scrollRect: {fileID: 1079510903}
   contentPanel: {fileID: 1698351416}
   snapPt: {fileID: 2050822792}
+  cardState: 0
 --- !u!222 &1079510902
 CanvasRenderer:
   m_ObjectHideFlags: 0

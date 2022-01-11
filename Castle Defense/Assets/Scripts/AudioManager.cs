@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.isLoop;
         }
     }
 
@@ -67,8 +68,6 @@ public class AudioManager : MonoBehaviour
         {  
             if(s.isMusic == true)
             {
-                Debug.Log(s.name) ;
-                Debug.Log(PlayerPrefs.GetInt("MusicEnabled", 1));
                 if (PlayerPrefs.GetInt("MusicEnabled", 1) == 0)
                 {
                      s.volume = 0;

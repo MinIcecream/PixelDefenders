@@ -10,6 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     void Start()
     {
         dialogueObj.SetActive(true);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
         if (PlayerPrefs.GetInt("CompletedTutorial", 0) == 0)
         {

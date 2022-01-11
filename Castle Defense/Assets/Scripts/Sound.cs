@@ -9,7 +9,7 @@ public class Sound
 
     public AudioClip clip;
 
-    public bool isMusic;
+    public bool isMusic,isLoop;
 
     [Range(0f, 1f)]
     public float volume;

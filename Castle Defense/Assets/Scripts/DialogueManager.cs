@@ -19,8 +19,20 @@ public class DialogueManager : MonoBehaviour
 
     int currentSentenceNumber=0;
 
+    bool currentlyInDialogue = false;
+
+    void Update()
+    {
+        if (currentlyInDialogue)
+        {
+
+            Time.timeScale = 0f;
+        } 
+
+    }
     public void StartDialogue(Dialogue dialogue)
     {
+        currentlyInDialogue = true;
         Time.timeScale = 0;
         AudioManager.Stop("Theme");
         anim.SetBool("isOpen", true);
@@ -43,11 +55,14 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSecondsRealtime(0.01f);
         }
+
+        AudioManager.Stop("Dialogue");
         button.enabled = true;
     }
 
     public void DisplayNextSentence()
     {
+        AudioManager.Play("Dialogue");
         if (dialogueSentences.Count == 0)
         {
             EndDialogue();
@@ -86,6 +101,10 @@ public class DialogueManager : MonoBehaviour
         anim.SetBool("isOpen", false);
         PlayerPrefs.SetInt("CompletedTutorial", 1);
 
+
+        AudioManager.Stop("Dialogue");
         AudioManager.Play("Theme");
+
+        currentlyInDialogue = false;
     }
 }
