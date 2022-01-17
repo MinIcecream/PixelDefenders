@@ -137,6 +137,8 @@ public class LevelManager : MonoBehaviour
     }
     public void BackButton()
     {
+        AudioManager.Stop("Theme");
+
         Time.timeScale = 1f;
         GameObject.FindWithTag("SceneChangeManager").GetComponent<SceneChangeManager>().LoadLevelSelect();
     }

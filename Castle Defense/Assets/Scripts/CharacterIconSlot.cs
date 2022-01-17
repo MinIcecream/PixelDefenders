@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterIconSlot : MonoBehaviour
-{
+{/*
     public string character;
     public GameObject button;
     public PlayerInventory invenMan;
@@ -38,5 +38,5 @@ public class CharacterIconSlot : MonoBehaviour
         }
 
         invenMan.RemoveCharacter(character);
-    }
+    }*/
 }

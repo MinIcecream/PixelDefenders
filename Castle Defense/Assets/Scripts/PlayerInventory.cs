@@ -8,12 +8,15 @@ public class PlayerInventory : MonoBehaviour
     public GameObject[] slots = new GameObject[7];
     public GameObject[] iconSelectionSlots = new GameObject[7];
     public string selectedChar;
-
+    
     void Start()
     {
         UpdateAllSlots();
     }
-
+    /*
+    //CHARACTER SELECT
+    
+     
     //tries to add character to lowest slot available
     public void TryAddCharacter(string character, GameObject slot)
     {
@@ -49,7 +52,7 @@ public class PlayerInventory : MonoBehaviour
             }
         }
     }
-
+    */
     //update icon selection bar and inventory bar
     public void UpdateAllSlots()
     {
@@ -65,9 +68,16 @@ public class PlayerInventory : MonoBehaviour
             }
         }
     }
-
+    
     public void SetActiveCharacter(string selectedCharacter)
     {
         selectedChar = selectedCharacter;
+    }
+    public void ResetSlots()
+    {
+        for(int i = 0; i < 7; i++)
+        {
+            slots[i].GetComponent<InventorySlot>().SetInactiveSlot();
+        }
     }
 }

@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 3825020379546231675}
-  sprite: {fileID: 3825020378795405250}
 --- !u!114 &2327484511203013676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +348,7 @@ MonoBehaviour:
   orcManager: {fileID: 3825020379546231676}
   spell: {fileID: 4076995403288596296, guid: c0495b87f8e406d4695eb1ba4eeb150d, type: 3}
   club: {fileID: 0}
+  smoke: {fileID: 0}
 --- !u!1 &5602495248712641425
 GameObject:
   m_ObjectHideFlags: 0

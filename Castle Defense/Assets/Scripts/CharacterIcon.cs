@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CharacterIcon : MonoBehaviour
 {
+    /*
     public PlayerInventory inventory;
     public string iconName;
 
@@ -27,5 +28,5 @@ public class CharacterIcon : MonoBehaviour
         Color c = GetComponent<Image>().color;
         c.a = 1;
         GetComponent<Image>().color = c;
-    }
+    }*/
 }

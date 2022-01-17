@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   health: 50
-  damage: 5
+  damage: 8
   range: 0.5
   movement: 0.8
   attackDuration: 1.5

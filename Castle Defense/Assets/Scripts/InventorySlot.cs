@@ -12,6 +12,8 @@ public class InventorySlot : MonoBehaviour
     public int slotNum;
     private string character;
 
+    //CHARAcTER SELECT
+    
     public void SetCharacter(string newCharacter)
     {
         image.SetActive(true);
@@ -26,11 +28,23 @@ public class InventorySlot : MonoBehaviour
         image.SetActive(false);
         character = "";
     }
+    
+    public void SetActiveSlot()
+    {
+        GetComponent<RectTransform>().sizeDelta = new Vector2(70, 70);
+    }
+
+    public void SetInactiveSlot()
+    {
+        GetComponent<RectTransform>().sizeDelta = new Vector2(64, 64);
+    }
 
     public void Clicked()
     {
         if(character != "")
         {
+            invenMan.ResetSlots();
+            SetActiveSlot();
             invenMan.SetActiveCharacter(character);
         }
     }

@@ -8,7 +8,7 @@ public class CalvalrySpear : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.name != "Castle")
+        if (coll.gameObject.tag != "Castle")
         {
             if (coll.gameObject.transform.parent.tag == "Ogre")
             {

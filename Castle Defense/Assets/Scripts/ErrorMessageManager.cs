@@ -28,7 +28,7 @@ public class ErrorMessageManager : MonoBehaviour
     }
     IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(1f);
         instance.canSpawn = true;
     }
 }

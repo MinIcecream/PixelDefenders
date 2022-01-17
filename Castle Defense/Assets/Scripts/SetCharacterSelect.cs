@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SetCharacterSelect : MonoBehaviour
 {
     public GameObject characterImage;
-
+    /*
     void Awake()
     {  
         foreach (string name in UnitManager.PlayerUnits())
@@ -17,5 +17,5 @@ public class SetCharacterSelect : MonoBehaviour
             newChar.GetComponent<Image>().sprite = Resources.Load<Sprite>("Units/" + name);
             newChar.GetComponent<CharacterIcon>().iconName = name;
         }
-    }
+    }*/
 }

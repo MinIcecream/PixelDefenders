@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp: {fileID: 5466154685880997938}
-  dissapearRate: 0.0015
+  dissapearRate: 0.01
 --- !u!114 &5581494412370680475
 MonoBehaviour:
   m_ObjectHideFlags: 0
