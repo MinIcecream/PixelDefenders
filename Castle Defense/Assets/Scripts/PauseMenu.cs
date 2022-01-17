@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToSelect()
     {
+        AudioManager.Stop("Dialogue");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
