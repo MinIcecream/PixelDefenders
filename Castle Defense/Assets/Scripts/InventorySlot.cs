@@ -41,6 +41,7 @@ public class InventorySlot : MonoBehaviour
 
     public void Clicked()
     {
+        AudioManager.Play("Click");
         if(character != "")
         {
             invenMan.ResetSlots();

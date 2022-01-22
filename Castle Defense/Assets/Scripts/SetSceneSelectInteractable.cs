@@ -12,12 +12,12 @@ public class SetSceneSelectInteractable : MonoBehaviour
         {
             if (card.GetComponent<ButtonID>().GetID() <= PlayerPrefs.GetInt("CompletedScene", 0) + 1)
             {
-                card.transform.GetChild(1).GetComponent<Button>().interactable = true;
+                card.transform.GetChild(5).GetComponent<Button>().interactable = true;
             }
             else
             {
-                card.transform.GetChild(1).GetComponent<Button>().interactable = false;
-                card.transform.GetChild(4).gameObject.SetActive(true);
+                card.transform.GetChild(5).GetComponent<Button>().interactable = false;
+                card.transform.GetChild(6).gameObject.SetActive(true);
             }
         }
     }
