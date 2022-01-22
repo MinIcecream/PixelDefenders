@@ -17,6 +17,7 @@ public class SceneChangeManager : MonoBehaviour
 
     public void LoadLevelSelect()
     {
+        AudioManager.Stop("Theme");
         SceneManager.LoadScene("Level Select");
     }
 

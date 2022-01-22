@@ -188,7 +188,7 @@ public class LevelManager : MonoBehaviour
 
         gold.SetGold((Resources.Load<Level>("Levels/"+CurrentLevelManager.CurrentScene()+"/"+levelNum.ToString())).gold);
 
-        incomeCoroutine = PassiveIncome(1f);
+        incomeCoroutine = PassiveIncome(1.5f);
         coroutine = CheckForWin(1f);
 
         StartCoroutine(coroutine);
