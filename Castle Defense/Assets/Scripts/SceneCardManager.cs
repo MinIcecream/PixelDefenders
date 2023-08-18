@@ -7,13 +7,14 @@ using TMPro;
 public class SceneCardManager : MonoBehaviour
 {
     public SceneCard card;
-    public GameObject button, shaded;
+    public GameObject button, shaded,shadow;
     public TextMeshProUGUI sceneNumberTmp, progressTextTmp;
 
     void Start()
     {
         GetComponent<Image>().color = card.mainColor;
         shaded.GetComponent<Image>().color = card.buttonColor;
+        shadow.GetComponent<Image>().color = card.buttonColor;
         sceneNumberTmp.text = "Scene " + card.sceneNumber;
 
         if (PlayerPrefs.GetInt("CompletedScene", 0) >= card.sceneNumber)

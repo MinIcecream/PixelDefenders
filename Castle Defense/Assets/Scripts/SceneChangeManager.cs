@@ -28,7 +28,7 @@ public class SceneChangeManager : MonoBehaviour
 
     public void ButtonClick()
     {
-        AudioManager.Play("Click");
+        AudioManager.Play("Click"); 
     }
 
     void Update()

@@ -11,7 +11,7 @@ public class OgreAttack : MonoBehaviour
     public GameObject spell;
 
     //giant
-    public GameObject club;
+    public GameObject club, slamParticles;
 
     //assassin
     public GameObject smoke;
@@ -40,12 +40,16 @@ public class OgreAttack : MonoBehaviour
 
         else if (type == "Orc Giant")
         {
-            orcManager.anim.SetTrigger("Attack");
-            yield return new WaitForSeconds(orcManager.attackTime);
-            club.SetActive(true);
- 
-            yield return new WaitForSeconds(attackDuration);
+            orcManager.anim.SetTrigger("Attack"); 
+            yield return new WaitForSeconds(orcManager.attackTime-.4f);
+            club.SetActive(true); 
+
+            yield return null;
             club.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            Instantiate(slamParticles, new Vector2(transform.position.x, transform.position.y - .55f), Quaternion.identity);
+
+            yield return new WaitForSeconds(attackDuration); 
             orcManager.isAttacking = false;
         }
 

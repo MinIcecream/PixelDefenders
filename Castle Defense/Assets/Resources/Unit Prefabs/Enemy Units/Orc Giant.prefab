@@ -307,6 +307,7 @@ MonoBehaviour:
   orcManager: {fileID: 3825020379546231676}
   spell: {fileID: 0}
   club: {fileID: 7937701413073115758}
+  slamParticles: {fileID: 4944704935473508415, guid: 497fac855a07ecd468e8e3d1677efc03, type: 3}
   smoke: {fileID: 0}
 --- !u!1 &7002820961564125771
 GameObject:
@@ -396,9 +397,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1758262266378359028}
-  - component: {fileID: 1854697771712293875}
   - component: {fileID: 2507133063428071539}
   - component: {fileID: 4250308987984739367}
+  - component: {fileID: 8303782075026217055}
   m_Layer: 10
   m_Name: Weapon Collider
   m_TagString: Untagged
@@ -420,32 +421,6 @@ Transform:
   m_Father: {fileID: 3825020379546231677}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1854697771712293875
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7937701413073115758}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.39677358, y: -0.43210256}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0543523, y: 1.2119746}
-  m_EdgeRadius: 0
 --- !u!50 &2507133063428071539
 Rigidbody2D:
   serializedVersion: 4
@@ -480,6 +455,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 3825020379546231676}
+--- !u!58 &8303782075026217055
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937701413073115758}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.039778948, y: -0.42431128}
+  serializedVersion: 2
+  m_Radius: 0.9287312
 --- !u!1 &8774069225342394098
 GameObject:
   m_ObjectHideFlags: 0
